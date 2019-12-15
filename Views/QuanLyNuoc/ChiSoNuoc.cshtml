@@ -1,0 +1,169 @@
+﻿<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                   DANH SÁCH CHỈ SỐ NƯỚC
+            </div>
+
+            <div class="card-header">
+                &nbsp; &nbsp;&nbsp;&nbsp;@Html.DropDownList("KYGHI_MA", ViewBag.kyghi as SelectList, new { @style = "border:1px solid silver; background: white;", @class = "btn btn-default", @required = "required" })
+                @*@using (Html.BeginForm("ChiSoNuoc", "QuanLyNuoc", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+                {
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Nhập mã kỳ ghi cần tìm..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                }*@
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+
+                <div class="card-body">        
+                    <div class="table-responsive">
+                        <table id="tblChiSoNuoc" class="table table-bordered table-hover">
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modal-Update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sửa kỳ ghi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="height:500px">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("Edit_CSN", "QuanLyNuoc", FormMethod.Post))
+                    {
+                        <div class="modal-body">
+                            <div class="col-md-12">
+                                <div class="form-group" id="signupform">
+                                    @*<input id="txtMaLT" name="MA_PhongBan" type="hidden">*@
+                                    <label for="exampleInputEmail1">Mã khách hàng:</label>
+                                    <input type="text" class="form-control" id="kh_ma" name="kh_ma" placeholder="Mã khách hàng" readonly>
+                                    <label for="exampleInputEmail1">Mã kỳ ghi:</label>
+                                    <input type="text" class="form-control" id="kg_ma" name="kh_ma" placeholder="Mã kỳ ghi" readonly>
+                                    <label for="exampleInputEmail1">Mã chỉ số nước :</label>
+                                    <input type="text" class="form-control" id="cns_ma" name="csn_ma" placeholder="Mã chỉ số nước" readonly>
+                                    <label for="exampleInputEmail1">Chỉ số nước mới :</label>
+                                    <input type="text" class="form-control" id="csn_moi" name="csn_moi" placeholder="Chỉ số nước mới">
+
+                                    @*  @Html.DropDownList("vt", null, new { @class = "form-control" })*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {      
+            $("#tblChiSoNuoc tbody tr").remove();
+            $.ajax({
+                type: 'GET',
+                url: "/QuanLyNuoc/GetChiSoNuoc",
+                dataType: 'json',
+                data: { id: $('#KYGHI_MA').val() },
+                success: function (data) {
+                    var items = '';
+                    var rows = "<tr>"
+                        + "<th align='left' class='ChiSoNuocTableTH'>Mã Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Họ Tên Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Cũ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Mới</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 1</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 2</th><th align='left' class='ChiSoNuocTableTH'>Thành tiền</th><th align='left' class='ChiSoNuocTableTH'>Trạng thái</th>"
+                        + "</tr>";
+                    $('#tblChiSoNuoc tbody').append(rows);
+
+                    $.each(data, function (i, item) {
+                        var rows = "<tr>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_HOTEN + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_CU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_MOI + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU1 + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU2 + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.THANH_TIEN + "</td>"
+                             + "<td class='ChiSoNuocTableTD'>" + item.TTPT_TEN + "</td>"
+                            + "</tr>";
+                        $('#tblChiSoNuoc tbody').append(rows);
+                    });
+
+                },
+                error: function (ex) {
+
+                }
+            });
+            return false;
+        });
+
+
+        $('#KYGHI_MA').change(function () {
+            $("#tblChiSoNuoc tbody tr").remove();
+            $.ajax({
+                type: 'GET',
+                url: "/QuanLyNuoc/GetChiSoNuoc",
+                dataType: 'json',
+                data: { id: $('#KYGHI_MA').val()},
+                success: function (data) {
+                    var items = '';
+                    var rows = "<tr>"
+                        + "<th align='left' class='ChiSoNuocTableTH'>Mã Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Họ Tên Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Cũ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Mới</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 1</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 2</th><th align='left' class='ChiSoNuocTableTH'>Thành tiền</th><th align='left' class='ChiSoNuocTableTH'>Trạng thái</th>"
+                        + "</tr>";
+                    $('#tblChiSoNuoc tbody').append(rows);
+
+                    $.each(data, function (i, item) {
+                        var rows = "<tr>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_HOTEN + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_CU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_MOI + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU1 + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU2 + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.THANH_TIEN + "</td>"
+                             + "<td class='ChiSoNuocTableTD'>" + item.TTPT_TEN + "</td>"
+                            + "</tr>";
+                        $('#tblChiSoNuoc tbody').append(rows);
+                    });
+
+                },
+                error: function (ex) {
+
+                }
+            });
+            return false;
+        });
+
+ </script>
+
+
+
+
+
+
+
+
+
+
+

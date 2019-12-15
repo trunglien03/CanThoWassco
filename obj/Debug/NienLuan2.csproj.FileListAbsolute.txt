@@ -1,0 +1,602 @@
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\ApplicationInsights.config
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\csc.exe
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\vbc.exe
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\NienLuan2.dll.config
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\NienLuan2.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\NienLuan2.pdb
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Antlr3.Runtime.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\EntityFramework.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Newtonsoft.Json.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Owin.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Helpers.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Mvc.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Optimization.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Razor.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.WebPages.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\WebGrease.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Helpers.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Mvc.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Optimization.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.Razor.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.WebPages.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Antlr3.Runtime.pdb
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Newtonsoft.Json.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\EntityFramework.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\obj\Debug\NienLuan2.csprojResolveAssemblyReference.cache
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\obj\Debug\NienLuan2.dll
+C:\Users\Dell PC\Downloads\NienLuan2\NienLuan2\obj\Debug\NienLuan2.pdb
+D:\NienLuan2\NienLuan2\NienLuan2\bin\ApplicationInsights.config
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\csc.exe
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\System.Collections.Immutable.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\System.Reflection.Metadata.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\vbc.exe
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe
+D:\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe.config
+D:\NienLuan2\NienLuan2\NienLuan2\bin\NienLuan2.dll.config
+D:\NienLuan2\NienLuan2\NienLuan2\bin\NienLuan2.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\NienLuan2.pdb
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Antlr3.Runtime.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Web.Infrastructure.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Newtonsoft.Json.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Owin.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Helpers.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Mvc.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Optimization.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Razor.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\WebGrease.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Helpers.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Mvc.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Optimization.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Razor.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Antlr3.Runtime.pdb
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Newtonsoft.Json.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\NienLuan2\NienLuan2\NienLuan2\obj\Debug\NienLuan2.dll
+D:\NienLuan2\NienLuan2\NienLuan2\obj\Debug\NienLuan2.pdb
+D:\NienLuan2\NienLuan2\NienLuan2\obj\Debug\NienLuan2.csprojResolveAssemblyReference.cache
+D:\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.Mvc.dll
+D:\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.xml
+D:\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.Mvc.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\ApplicationInsights.config
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\csc.exe
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\vbc.exe
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\NienLuan2.dll.config
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\NienLuan2.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\NienLuan2.pdb
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Antlr3.Runtime.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Newtonsoft.Json.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Owin.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.Mvc.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Helpers.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Mvc.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Optimization.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Razor.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\WebGrease.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\PagedList.Mvc.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Helpers.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Mvc.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Optimization.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.Razor.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Antlr3.Runtime.pdb
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Newtonsoft.Json.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\obj\Debug\NienLuan2.csprojResolveAssemblyReference.cache
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\obj\Debug\NienLuan2.dll
+C:\Users\Trung.DESKTOP-FS2GKEF\Downloads\Compressed\NienLuan2\NienLuan2\NienLuan2\obj\Debug\NienLuan2.pdb
+D:\NienLuan2\NienLuan2\bin\ApplicationInsights.config
+D:\NienLuan2\NienLuan2\bin\roslyn\csc.exe
+D:\NienLuan2\NienLuan2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\NienLuan2\NienLuan2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\NienLuan2\NienLuan2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\NienLuan2\NienLuan2\bin\roslyn\System.Collections.Immutable.dll
+D:\NienLuan2\NienLuan2\bin\roslyn\System.Reflection.Metadata.dll
+D:\NienLuan2\NienLuan2\bin\roslyn\vbc.exe
+D:\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe
+D:\NienLuan2\NienLuan2\bin\roslyn\VBCSCompiler.exe.config
+D:\NienLuan2\NienLuan2\bin\NienLuan2.dll.config
+D:\NienLuan2\NienLuan2\bin\NienLuan2.dll
+D:\NienLuan2\NienLuan2\bin\NienLuan2.pdb
+D:\NienLuan2\NienLuan2\bin\Antlr3.Runtime.dll
+D:\NienLuan2\NienLuan2\bin\EntityFramework.dll
+D:\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.Web.Infrastructure.dll
+D:\NienLuan2\NienLuan2\bin\Newtonsoft.Json.dll
+D:\NienLuan2\NienLuan2\bin\Owin.dll
+D:\NienLuan2\NienLuan2\bin\PagedList.dll
+D:\NienLuan2\NienLuan2\bin\PagedList.Mvc.dll
+D:\NienLuan2\NienLuan2\bin\System.Web.Helpers.dll
+D:\NienLuan2\NienLuan2\bin\System.Web.Mvc.dll
+D:\NienLuan2\NienLuan2\bin\System.Web.Optimization.dll
+D:\NienLuan2\NienLuan2\bin\System.Web.Razor.dll
+D:\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.dll
+D:\NienLuan2\NienLuan2\bin\System.Web.WebPages.dll
+D:\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.dll
+D:\NienLuan2\NienLuan2\bin\WebGrease.dll
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.DependencyCollector.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.Web.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.AI.WindowsServer.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.ApplicationInsights.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\NienLuan2\NienLuan2\bin\PagedList.xml
+D:\NienLuan2\NienLuan2\bin\PagedList.Mvc.xml
+D:\NienLuan2\NienLuan2\bin\System.Web.Helpers.xml
+D:\NienLuan2\NienLuan2\bin\System.Web.Mvc.xml
+D:\NienLuan2\NienLuan2\bin\System.Web.Optimization.xml
+D:\NienLuan2\NienLuan2\bin\System.Web.Razor.xml
+D:\NienLuan2\NienLuan2\bin\System.Web.WebPages.xml
+D:\NienLuan2\NienLuan2\bin\System.Web.WebPages.Deployment.xml
+D:\NienLuan2\NienLuan2\bin\System.Web.WebPages.Razor.xml
+D:\NienLuan2\NienLuan2\bin\Antlr3.Runtime.pdb
+D:\NienLuan2\NienLuan2\bin\Newtonsoft.Json.xml
+D:\NienLuan2\NienLuan2\bin\EntityFramework.xml
+D:\NienLuan2\NienLuan2\bin\EntityFramework.SqlServer.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Google.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\NienLuan2\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\NienLuan2\NienLuan2\obj\Debug\NienLuan2.csprojResolveAssemblyReference.cache
+D:\NienLuan2\NienLuan2\obj\Debug\NienLuan2.dll
+D:\NienLuan2\NienLuan2\obj\Debug\NienLuan2.pdb
+D:\CanThoWasscoWeb\NienLuan2\bin\ApplicationInsights.config
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\csc.exe
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\System.Collections.Immutable.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\System.Reflection.Metadata.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\vbc.exe
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\VBCSCompiler.exe
+D:\CanThoWasscoWeb\NienLuan2\bin\roslyn\VBCSCompiler.exe.config
+D:\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.dll.config
+D:\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.pdb
+D:\CanThoWasscoWeb\NienLuan2\bin\Antlr3.Runtime.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.SqlServer.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.DependencyCollector.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Web.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.WindowsServer.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.ApplicationInsights.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Google.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Web.Infrastructure.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Newtonsoft.Json.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Owin.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\PagedList.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\PagedList.Mvc.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Helpers.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Mvc.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Optimization.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Razor.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Deployment.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Razor.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\WebGrease.dll
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.DependencyCollector.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Web.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.WindowsServer.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.ApplicationInsights.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\PagedList.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\PagedList.Mvc.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Helpers.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Mvc.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Optimization.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.Razor.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Deployment.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Razor.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Antlr3.Runtime.pdb
+D:\CanThoWasscoWeb\NienLuan2\bin\Newtonsoft.Json.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.SqlServer.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Google.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.csprojResolveAssemblyReference.cache
+D:\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.dll
+D:\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.pdb
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\ApplicationInsights.config
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\csc.exe
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\System.Collections.Immutable.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\System.Reflection.Metadata.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\vbc.exe
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\VBCSCompiler.exe
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\VBCSCompiler.exe.config
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.dll.config
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.pdb
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Antlr3.Runtime.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.SqlServer.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.DependencyCollector.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Web.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.WindowsServer.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.ApplicationInsights.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Google.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Web.Infrastructure.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Newtonsoft.Json.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Owin.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.Mvc.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Linq.Dynamic.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Helpers.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Mvc.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Optimization.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Razor.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Deployment.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Razor.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\WebGrease.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.DependencyCollector.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Web.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.WindowsServer.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.ApplicationInsights.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.Mvc.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Helpers.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Mvc.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Optimization.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Razor.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Deployment.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Razor.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Antlr3.Runtime.pdb
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Newtonsoft.Json.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.SqlServer.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Google.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.pdb
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Rotativa.dll
+D:\THUCTAP\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.csprojResolveAssemblyReference.cache
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\ApplicationInsights.config
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\csc.exe
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\System.Collections.Immutable.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\System.Reflection.Metadata.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\vbc.exe
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\VBCSCompiler.exe
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\roslyn\VBCSCompiler.exe.config
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.dll.config
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\NienLuan2.pdb
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Antlr3.Runtime.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.SqlServer.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.DependencyCollector.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Web.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.WindowsServer.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.ApplicationInsights.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Google.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Web.Infrastructure.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Newtonsoft.Json.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Owin.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.Mvc.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Rotativa.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Linq.Dynamic.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Helpers.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Mvc.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Optimization.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Razor.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Deployment.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Razor.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\WebGrease.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.DependencyCollector.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.Web.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AI.WindowsServer.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.ApplicationInsights.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\PagedList.Mvc.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Helpers.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Mvc.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Optimization.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.Razor.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Deployment.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\System.Web.WebPages.Razor.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Antlr3.Runtime.pdb
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Newtonsoft.Json.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\EntityFramework.SqlServer.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Google.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.csprojResolveAssemblyReference.cache
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.dll
+D:\Project\THUCTAP\CanThoWasscoWeb\NienLuan2\obj\Debug\NienLuan2.pdb

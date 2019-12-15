@@ -1,0 +1,115 @@
+﻿@model NienLuan2.Models.ChiSoNuoc_KH_Models
+
+
+@{
+    ViewBag.Title = "IndexById";
+    var now = DateTime.Now;
+    var startOfMonth = new DateTime(now.Year, now.Month, 1);
+    var DaysInMonth = DateTime.DaysInMonth(now.Year, now.Month);
+    var lastDay = new DateTime(now.Year, now.Month, DaysInMonth);
+}
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Content/Admin/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="~/Content/Admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- Bootstrap core CSS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom fonts for this template-->
+    <link href="/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Page level plugin CSS-->
+    <link href="/Content/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="~/Content/css/jquery-ui.css" rel="stylesheet" />
+    <!-- Custom styles for this template-->
+    <link href="/Content/css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="~/Content/css/jquery-ui.js"></script>
+
+</head>
+<div>
+    <h2 style="text-align:center">PHIẾU THU</h2>
+    <h6 style="text-align:center">Số: PT000-@Model.CSN_MA</h6>
+    <h6 style="text-align:right">Từ ngày @DateTime.Today.ToString("dd/MM/yyyy") - Đến ngày @lastDay.ToString("dd/MM/yyyy")</h6>
+    <table class="table table-bordered table-condensed table-striped">
+        <tr>
+            <td>Khách hàng tên : &nbsp;<strong>@Model.KH_HOTEN</strong></td>
+        </tr>
+        <tr>
+            <td>Địa chỉ lắp đặt : &nbsp;<strong>@Model.KH_DIACHILAPDAT</strong></td>
+        </tr>
+        <tr>
+            <td>Hình thức thanh toán : &nbsp;<strong>@Model.HTTT_TEN</strong></td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-condensed table-striped">
+        <tr>
+            <td>
+                <table class="table table-bordered table-condensed table-striped">
+                    <tr>
+                        <td colspan="2">
+                            <strong>Chi tiết sử dụng</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Chỉ số nước cũ</td>
+                        <td>@Model.CSN_CU</td>
+                    </tr>
+                    <tr>
+                        <td>Chỉ số nước mới</td>
+                        <td>@Model.CSN_MOI</td>
+                    </tr>
+                    <tr>
+                        <td>Tiêu thụ</td>
+                        <td>@Model.CSN_TIEUTHU</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table class="table table-bordered table-condensed table-striped">
+                    <tr>
+                        <td colspan="2">
+                            <strong>Thanh toán</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Đơn giá</td>
+                        <td>
+                            @Convert.ToDecimal(@Model.GIATIEN).ToString("N0")
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Thanh toán</td>
+                        <td>
+                            @Convert.ToDecimal(@Model.THANH_TIEN).ToString("N0")
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table class="table table-bordered table-condensed table-striped">
+        <tr>
+            <td><strong>Bằng chữ</strong>: &nbsp;@Model.BANG_CHU</td>
+        </tr>
+    </table>
+            <div class="pull-right" style="text-align:center">
+                <p style="font-size:18px"><strong>Khách hàng</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+                        <a style="font-size:15px">(Ký, ghi rõ họ,tên)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>     
+                </p>
+            </div>
+        </div>
+

@@ -1,0 +1,194 @@
+﻿@*@model PagedList.IPagedList<NienLuan2.Models.KHACH_HANG>
+@using PagedList.Mvc;*@
+@using NienLuan2.Models
+@model IEnumerable<BangGhiModels>
+@{
+    //Sử dụng cookie để lấy mã mới nhất
+    string ma = string.Empty;
+    HttpCookie reqCookies = Request.Cookies["MaKG"];
+    if (reqCookies != null)
+    {
+        ma = reqCookies["MaKG"].ToString();
+    }
+    Cty_CapNuocEntities db = new Cty_CapNuocEntities();
+    string username = (Session["TaiKhoan"] as NHANVIEN).NV_USERNAME;
+    string name = (Session["TaiKhoan"] as NHANVIEN).NV_HOTEN;
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                BẢNG GHI CHỈ SỐ NƯỚC - <strong>@Html.Label(@name)</strong>
+            </div>
+            <div class="card-header">
+
+                @*@using (Html.BeginForm("ChiSoNuoc", "KyGhi", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+            {
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Nhập kỳ ghi cần tìm..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                }*@
+
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable">
+                            <tr>
+
+                                <th>
+                                    Mã Khách Hàng
+                                </th>
+                                <th>
+                                    Tên Khách Hàng
+                                </th>
+                                <th>
+                                    Mã Kỳ Ghi
+                                </th>
+                                <th>
+                                    Thao tác
+                                </th>
+                            </tr>
+
+
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+                                    @if (item.TT_MA == "TT01")
+                                    {
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.KH_MA)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.KH_HOTEN)
+                                        </td>
+                                        <td>
+                                            @ma
+                                        </td>
+                                        <td>
+                                            <button class="btn btn-primary" onclick="GetDetails('@item.KH_MA')">
+                                                Thêm chỉ số nước<i class="fas fa-add"></i>
+                                            </button>
+                                        </td>
+                                    }
+                                </tr>
+                            }
+                        </table>
+                        @*@Html.PagedListPager(Model, page => Url.Action("BangGhi", new { page, @searchString = @ViewBag.SearchString }))*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-mrole">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm chỉ số nước</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("AddCSN", "KyGhi", FormMethod.Post))
+                    {
+                        <div class="modal-body" style="height:auto">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mã Khách hàng :</label>
+
+                                    <input type="text" class="form-control" id="kh_ma" name="KH_MA" placeholder="Mã khách hàng" readonly >
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+
+                                    <label for="exampleInputEmail1">Mã kỳ ghi :</label>
+
+                                    <input type="text" class="form-control" id="kg_ma" name="KYGHI_MA" placeholder="Mã kỳ ghi" value=@ma readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Chỉ số nước mới:</label>
+                                    <input type="text" class="form-control " id="CSN_Moi" name="CSN_Moi" placeholder="Chỉ số nước mới">
+                                </div>
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary btn_them">Thêm</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+    <script type="text/javascript">
+
+
+        function GetDetails(id) {
+            $.ajax({
+
+                url: "/KyGhi/Add_CSN/" + id,
+                typr: "GET",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (response) {
+
+                    $('#kh_ma').val(response.KH_MA);
+
+                    $('#modal-mrole').modal('show');
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+            });
+            return false;
+        }
+
+
+    //bat loi khi them
+
+    $(".btn_them").on('click', function () {
+
+        var KH_ma = $('#KH_ma').val();
+        var KG_ma = $('#KG_ma').val();;
+
+        if (KH_ma === '') {
+            alert("Mã khách hàng không được rỗng!!");
+            return false;
+        }
+    });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

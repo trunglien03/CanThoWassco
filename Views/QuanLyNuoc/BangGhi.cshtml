@@ -1,0 +1,413 @@
+﻿
+@using NienLuan2.Models
+@model IEnumerable<ChiSoNuoc_KH_Models>
+
+@{
+    Cty_CapNuocEntities db = new Cty_CapNuocEntities();
+    string username = (Session["TaiKhoan"] as NHANVIEN).NV_USERNAME;
+    string name = (Session["TaiKhoan"] as NHANVIEN).NV_HOTEN;
+    string makg = string.Empty;
+    HttpCookie reqCookies = Request.Cookies["MaKG"];
+    if (reqCookies != null)
+    {
+        makg = reqCookies["MaKG"].ToString();
+    }
+}
+<style>
+    .check {
+        position: relative;
+        padding-left: 30px;
+        cursor: pointer;
+        font-size: 1rem;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        /* Hide the browser's default checkbox */
+        .check input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .check:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .check input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .check input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .check .checkmark:after {
+        left: 9px;
+        top: 5px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+</style>
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                BẢNG GHI KỲ GHI @DateTime.Today.ToString("MM/yyyy") - <strong>@Html.Label(@name)</strong>
+            </div>
+            <div class="card-header">
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable">
+                            @foreach (var tt in Model.GroupBy(x => x.TTPT_TEN))
+                            {
+                                <tr class="group-header" data-toggle="collapse">
+                                    <td colspan="12">
+                                        <i class="far fa-plus-square">
+                                            <span class="h4">&nbsp;&nbsp;@tt.Key (@tt.Where(x => x.KYGHI_MA == makg).Count())</span>
+                                        </i>
+                                    </td>
+                                </tr>
+                                <tr class="panel-collapse collapse">
+                                    <th>
+                                        Tên khách hàng
+                                    </th>
+                                    <th>
+                                        Địa chỉ KH
+                                    </th>
+                                    <th>
+                                        CSN mới
+                                    </th>
+                                    <th>
+                                        CSN cũ
+                                    </th>
+                                    <th>
+                                        CSN tiêu thụ
+                                    </th>
+                                    <th>
+                                        CSN tiêu thụ 1
+                                    </th>
+                                    <th>
+                                        CSN tiêu thụ 2
+                                    </th>
+                                    <th>
+                                        Giá tiền
+                                    </th>
+                                    <th>
+                                        Thành tiền
+                                    </th>
+                                    <th>
+                                        Thao tác
+                                    </th>
+                                </tr>
+                                foreach (var item in tt.OrderBy(x => x.LT_MA))
+                                {
+                                    if (item.KYGHI_MA == makg)
+                                    {
+                                        <tr class="panel-collapse collapse">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.KH_HOTEN)
+                                            </td>
+                                            <td >
+                                                @Html.DisplayFor(modelItem => item.KH_DIACHILAPDAT)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CSN_MOI)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CSN_CU)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CSN_TIEUTHU)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CSN_TIEUTHU1)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.CSN_TIEUTHU2)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.GIATIEN)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.THANH_TIEN)
+                                            </td>
+                                            <td>
+                                                <button class="item btn_Sua btn btn-primary btn-sm" onclick="GetDetails('@item.CSN_MA')">
+                                                    <i class="fas fa-edit"></i>
+                                                </button>
+                                                @Html.ActionLink(" ", "View_map", "QuanLyNuoc", new { @id = item.CSN_MA }, new { @class = "btn btn-primary btn-sm fas fa-map-marked-alt" })
+                                                    @{
+                                                        string ttdt;
+                                                        ttdt = item.TTPT_MA;
+                                                        if (ttdt == "TTPT02")
+                                                        {
+                                                            <a class="item btn btn-primary btn-sm" href=@Url.Action("PrintPartialViewToPdf", new { @id = item.CSN_MA})>
+                                                                <i class="fas fa-print"></i>
+                                                            </a>
+                                                        }
+                                                    }
+
+                                                @*<button class="open_map btn btn-primary" data-toggle="modal" data-target="#modal_map"  data-id="@item.KH_MA">Mo map</button>*@
+                                            </td>
+                                        </tr>
+                                                            }
+                                                        }
+                                                    }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal_map">
+    <div class="modal-dialog">
+            <div class="modal-body" style="height:600px;width:600px">
+                    <div id="map" onload="initMap()" style="width:600px;height:600px"></div>
+                    <input type="text" id="address" value="" hidden />
+            </div>
+    </div>
+    </div>
+
+            <div class="modal fade" id="modal-Update">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Thêm chỉ số nước</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" style="height:auto">
+                            <div class="box box-primary">
+                                @using (Html.BeginForm("Edit_CSN1", "QuanLyNuoc", FormMethod.Post))
+                                {
+                                    <div class="modal-body">
+                                        <div class="col-md-12">
+                                            <div class="form-group" id="signupform">
+                                                @*<input id="txtMaLT" name="MA_PhongBan" type="hidden">*@
+                                                <label for="exampleInputEmail1">Mã khách hàng:</label>
+                                                <input type="text" class="form-control" id="kh_ma" name="KH_MA" placeholder="Mã khách hàng" readonly>
+                                                <label for="exampleInputEmail1">Tên khách hàng:</label>
+                                                <input type="text" class="form-control" id="kh_ten" name="KH_HOTEN" placeholder="Tên khách hàng" readonly>
+                                                <input type="text" class="form-control" id="kg_ma" name="KYGHI_MA" placeholder="Mã kỳ ghi" readonly hidden>
+                                                <input type="text" class="form-control" id="cns_ma" name="CSN_MA" placeholder="Mã chỉ số nước" readonly hidden>
+                                                <label for="exampleInputEmail1">Chỉ số nước mới :</label>
+                                                <input type="text" class="form-control num1" id="csn_moi" name="CSN_MOI" placeholder="Chỉ số nước mới" onchange="Check()">
+                                                <p id="Status"></p>
+                                                <label for="exampleInputEmail1">Chỉ số nước cũ :</label>
+                                                <input type="text" class="form-control num2" id="csn_cu" name="CSN_CU" placeholder="Chỉ số nước cũ" readonly>
+                                                <label for="exampleInputEmail1">Chỉ số nước tiêu thụ :</label>
+                                                <input type="text" class="form-control subt" id="csn_tt" name="CSN_TIEUTHU" placeholder="Chỉ số nước tiêu thụ" readonly>
+                                                <label for="exampleInputEmail1">Chỉ số nước tiêu thụ 1 :</label>
+                                                <input type="text" class="form-control" id="csn_tt1" name="CSN_TIEUTHU1" placeholder="Chỉ số nước tiêu thụ 1" readonly>
+                                                <label for="exampleInputEmail1">Chỉ số nước tiêu thụ 2 :</label>
+                                                <input type="text" class="form-control" id="csn_tt2" name="CSN_TIEUTHU2" placeholder="Chỉ số nước tiêu thụ 2" readonly>
+                                                <label for="exampleInputEmail1">Giá tiền :</label>
+                                                <input type="text" class="form-control giatien" id="gt" name="GIATIEN" placeholder="Giá tiền" readonly>
+                                                <label for="exampleInputEmail1">Thành tiền :</label>
+                                                <input type="text" class="form-control subt2" id="tt" name="THANH_TIEN" placeholder="Thành tiền" readonly>
+                                                <input type="text" class="form-control trangthai" id="tthai" name="TTPT_MA" placeholder="Trạng thái" value="TTPT01" hidden>
+                                                <div style="padding-top:20px">
+                                                    <label class="check">
+                                                        Thu tiền
+                                                        <input type="checkbox" id="tth">
+                                                        <span class="checkmark"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary btn_cn">Lưu</button>
+                                        <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            @section scripts {
+                <script type="text/javascript">
+                    function GetDetails(id) {
+                        $.ajax({
+
+                            url: "/QuanLyNuoc/EditCSN/" + id,
+                            typr: "GET",
+                            contentType: "application/json;charset=UTF-8",
+                            dataType: "json",
+                            success: function (response) {
+                                // $('#txtMaLT').val(response.LT_MA);
+                                $('#kh_ma').val(response.KH_MA);
+                                $('#kh_ten').val(response.KH_HOTEN);
+                                $('#lt_ma').val(response.LT_MA);
+                                // document.getElementById("txtMaLT1").disabled = true;
+                                $('#kg_ma').val(response.KYGHI_MA);
+                                $('#cns_ma').val(response.CSN_MA);
+                                $('#csn_moi').val(response.CSN_MOI);
+                                $('#csn_cu').val(response.CSN_CU);
+                                $('#csn_tt').val(response.CSN_TIEUTHU);
+                                $('#csn_tt1').val(response.CSN_TIEUTHU1);
+                                $('#csn_tt2').val(response.CSN_TIEUTHU2);
+                                $('#gt').val(response.GIATIEN);
+                                $('#tt').val(response.THANH_TIEN);
+                                $('#tth').val(response.TTPT_MA);
+                                // $('#vt').val(response.NV_USERNAME);
+                                $('#modal-Update').modal('show');
+                            },
+                            error: function (response) {
+                                alert(response.responseText);
+                            }
+                        });
+                        return false;
+                    }
+
+
+
+                    //bat loi khi them
+                    $(".btn_cn").on('click', function () {
+                        var NUOC_MOI = $('#csn_moi').val();
+                        var NUOC_CU = $('#csn_cu').val();
+
+
+                    });
+
+                    // chi so nuoc tieu thu
+
+                    $(function () {
+                        $(".num1, .num2").on("keydown keyup", sum);
+                        function sum() {
+
+                            $(".subt").val(Number($(".num1").val()) - Number($(".num2").val()));
+
+                            $(".subt2").val(Number($(".subt").val()) * Number($(".giatien").val()));
+
+
+                        }
+                    });
+
+                    document.getElementById('tth').onclick = function (e) {
+                        if (this.checked) {
+                            $(".trangthai").val("TTPT02");
+                        } else {
+                            $(".trangthai").val("TTPT01");
+                        }
+                    }
+
+                    function Check() {
+                        if ($('#csn_moi').val() <= $('#csn_cu').val()) {
+                            $("#Status").html('<font color="Red">Chỉ số nước mới không được nhỏ hơn chỉ số nước cũ.</font>');
+                            $('#csn_moi').css("border-color", "Red");
+
+                        }
+                        else {
+                            $("#Status").html('');
+                            $("#csn_moi").css("border-color", "Green");
+                        }
+                    }
+                    $(function () {
+                        $('.group-header').click(function () {
+                            $(this).nextUntil('.group-header').toggle();
+                        });
+                    });
+
+                    function addPaging() {
+                        $('#employeeGrid tr:first').prepend('<th style="width:60px;">S. No.</th>');
+                        $('#employeeGrid tr:not(:first, .group-header, .group-footer)').each(function (index) {
+                            $(this).prepend('<td class="text-right">' + (index + 1) + '.</td>');
+                        });
+                    }
+
+                    //Hàm FormatNumber khi đang nhập dữ liệu onkeyup="FormatNumber(this);"
+                    function FormatNumber(obj) {
+                        var strvalue;
+                        if (eval(obj))
+                            strvalue = eval(obj).value;
+                        else
+                            strvalue = obj;
+                        var num;
+                        num = strvalue.toString().replace(/\$|\,/g, '');
+
+                        if (isNaN(num))
+                            num = "";
+                        sign = (num == (num = Math.abs(num)));
+                        num = Math.floor(num * 100 + 0.50000000001);
+                        num = Math.floor(num / 100).toString();
+                        for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3) ; i++)
+                            num = num.substring(0, num.length - (4 * i + 3)) + ',' +
+                            num.substring(num.length - (4 * i + 3));
+                        //return (((sign)?'':'-') + num);
+                        eval(obj).value = (((sign) ? '' : '-') + num);
+                    }
+
+                    // Hàm FormatNumber khi đã nhập xong cần FormatNumber dữ liệu vừa nhập
+                    function formatCurrency() {
+                        var subt2 = $("#tt").val().toString().replace(/\$|\,/g, '');
+                        if (isNaN(subt2))
+                            subt2 = "0";
+                        sign = (subt2 == (subt2 = Math.abs(subt2)));
+                        subt2 = Math.floor(subt2 * 100 + 0.50000000001);
+                        subt2 = Math.floor(subt2 / 100).toString();
+                        for (var i = 0; i < Math.floor((subt2.length - (1 + i)) / 3) ; i++)
+                            subt2 = subt2.substring(0, subt2.length - (4 * i + 3)) + ',' +
+                            subt2.substring(subt2.length - (4 * i + 3));
+                        return (((sign) ? '' : '-') + subt2);
+                    }
+
+                </script>
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+

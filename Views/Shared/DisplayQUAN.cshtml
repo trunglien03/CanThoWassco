@@ -1,0 +1,10 @@
+﻿@model NienLuan2.Models.KHU_VUC
+<option value="">-- Chọn khu vực --</option>
+
+@if (ViewBag.khuvuc_list != null)
+{
+    foreach (var item in ViewBag.khuvuc_list)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+}

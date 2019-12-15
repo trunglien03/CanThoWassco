@@ -1,0 +1,57 @@
+﻿@using NienLuan2.Models
+@model IEnumerable<LO_TRINH>
+@{
+    Cty_CapNuocEntities db = new Cty_CapNuocEntities();
+    string username = (Session["TaiKhoan"] as NHANVIEN).NV_USERNAME;
+    string name = (Session["TaiKhoan"] as NHANVIEN).NV_HOTEN;
+}
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                DANH SÁCH LỘ TRÌNH NHÂN VIÊN - <strong>@Html.Label(@name)</strong>
+            </div>
+            <div class="card-header">
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable">
+                            <tr>
+                                <th>
+                                    STT
+                                </th>
+                                <th>
+                                    Mã số nhân viên
+                                </th>
+                                <th>
+                                    Tên lộ trình
+                                </th>
+                            </tr>
+
+                            @{
+                                int count = 1;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @count
+                                        @{
+                                            count++;
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LT_MA)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LT_TEN)
+                                    </td>
+                                </tr>                                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

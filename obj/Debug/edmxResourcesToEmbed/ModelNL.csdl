@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NL2_QLVAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CHUCVU">
+    <Key>
+      <PropertyRef Name="MA_ChucVu" />
+    </Key>
+    <Property Name="MA_ChucVu" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TEN_ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DON_KHANGCAO">
+    <Key>
+      <PropertyRef Name="MA_HoSo" />
+    </Key>
+    <Property Name="MA_HoSo" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_NhanVien" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ngay_nhan_don_KC" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="DON_KHOIKIEN">
+    <Key>
+      <PropertyRef Name="MA_HoSo" />
+    </Key>
+    <Property Name="MA_HoSo" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_NhanVien" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ngay_nhan_don_KK" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="DUONGSU">
+    <Key>
+      <PropertyRef Name="MA_DuongSu" />
+    </Key>
+    <Property Name="MA_DuongSu" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_LoaiDS" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CMND" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HoTen_DS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NamSinh_DS" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="QueQuan_DS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi_DS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoDienThoai_DS" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="GioiTinh_DS" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HOSO_VUAN">
+    <Key>
+      <PropertyRef Name="MA_HoSo" />
+    </Key>
+    <Property Name="MA_HoSo" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_NhanVien" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_TrangThai" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_LoaiVA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ten_VuAn" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NoiDung_VA" Type="String" MaxLength="350" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Loai_HS" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="LOAI_DS">
+    <Key>
+      <PropertyRef Name="MA_LoaiDS" />
+    </Key>
+    <Property Name="MA_LoaiDS" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ten_LoaiDS" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOAI_VUAN">
+    <Key>
+      <PropertyRef Name="MA_LoaiVA" />
+    </Key>
+    <Property Name="MA_LoaiVA" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ten_LoaiVA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MA_NhanVien" />
+    </Key>
+    <Property Name="MA_NhanVien" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_ChucVu" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_QNSD" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MA_PhongBan" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="HoTen_NV" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NamSinh_NV" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="GioiTinh_NV" Type="Boolean" Nullable="false" />
+    <Property Name="QueQuan_NV" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CMND_NV" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SoDienThoai_NV" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHONGBAN">
+    <Key>
+      <PropertyRef Name="MA_PhongBan" />
+    </Key>
+    <Property Name="MA_PhongBan" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ten_PB" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QUYEN_NSD">
+    <Key>
+      <PropertyRef Name="MA_QNSD" />
+    </Key>
+    <Property Name="MA_QNSD" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ten_QNSD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRANGTHAI_HS">
+    <Key>
+      <PropertyRef Name="MA_TT" />
+    </Key>
+    <Property Name="MA_TT" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ten_TT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VAITRO_NV">
+    <Key>
+      <PropertyRef Name="MA_VaiTro" />
+    </Key>
+    <Property Name="MA_VaiTro" Type="String" MaxLength="5" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Ten_VT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="NL2_QLVAEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CHUCVUs" EntityType="Self.CHUCVU" />
+    <EntitySet Name="DON_KHANGCAO" EntityType="Self.DON_KHANGCAO" />
+    <EntitySet Name="DON_KHOIKIEN" EntityType="Self.DON_KHOIKIEN" />
+    <EntitySet Name="DUONGSUs" EntityType="Self.DUONGSU" />
+    <EntitySet Name="HOSO_VUAN" EntityType="Self.HOSO_VUAN" />
+    <EntitySet Name="LOAI_DS" EntityType="Self.LOAI_DS" />
+    <EntitySet Name="LOAI_VUAN" EntityType="Self.LOAI_VUAN" />
+    <EntitySet Name="NHANVIENs" EntityType="Self.NHANVIEN" />
+    <EntitySet Name="PHONGBANs" EntityType="Self.PHONGBAN" />
+    <EntitySet Name="QUYEN_NSD" EntityType="Self.QUYEN_NSD" />
+    <EntitySet Name="TRANGTHAI_HS" EntityType="Self.TRANGTHAI_HS" />
+    <EntitySet Name="VAITRO_NV" EntityType="Self.VAITRO_NV" />
+  </EntityContainer>
+</Schema>

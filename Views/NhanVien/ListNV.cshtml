@@ -1,0 +1,272 @@
+﻿@model PagedList.IPagedList<NienLuan2.Models.NHANVIEN>
+@using PagedList.Mvc;
+@{ 
+  
+}
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <title>Công ty cấp nước Cần Thơ</title>
+    <div class="container-fluid">
+        <div class="card mb-3">
+            <div class="box">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    DANH SÁCH NHÂN VIÊN
+                </div>
+                <div class="card-header">
+                    <a class="btn btn-primary" @Html.ActionLink("Thêm nhân viên", "AddNV", "NhanVien", null, new { @class = "btn btn-sucesss" })</a>
+                    @using (Html.BeginForm("ListNV", "NhanVien", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+                    {
+                        <div class="input-group">
+                            <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Nhập mã nhân viên cần tìm..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                    <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover" id="dataTable">
+                                <tr>
+                                    <th>
+                                        STT
+                                    </th>
+                                    <th>
+                                        Tài khoản
+                                    </th>
+                                    <th>
+                                        Họ tên
+                                    </th>
+                                    <th>
+                                        Chức vụ
+                                    </th>                                
+                                    <th>
+                                        Phòng ban
+                                    </th>
+                                    <th>
+                                        Số điện thoại
+                                    </th>
+                                    <th>
+                                        Email
+                                    </th>
+                                    <th>
+                                        Vai trò
+                                    </th>
+                                    <th>
+                                        Thao tác
+                                    </th>
+                                </tr>
+
+                                @{
+                                    int count = 1;
+                                }
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @count
+                                            @{
+                                                count++;
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NV_USERNAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NV_HOTEN)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CHUCVU.CV_TEN)
+                                        </td>                   
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.PHONGBAN.PB_TEN)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NV_SDT)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NV_EMAIL)
+                                        </td>
+                                        <td>
+                                            @*@Html.DisplayFor(modelItem => item.VAITRO.VT_TEN)*@
+                                            @{  string vt;
+                                                vt = item.VT_MA;
+                                                if (vt == "VT01")
+                                                {
+                                                    <label><input type="checkbox" checked="checked" name="VT01" value="true" disabled> Quản trị </label>
+                                                    <label><input type="checkbox" name="VT02" value="VT02" disabled> Nhân viên</label>
+                                                }
+                                                else
+                                                {
+                                                    <label><input type="checkbox" name="VT02" value="VT02" disabled> Quản trị </label>
+                                                    <label><input type="checkbox" checked="checked" name="VT01" value="true" disabled> Nhân viên </label>
+                                                }
+
+                                            }
+                                        </td>
+                                        <td>
+                                            <button class="item btn_Sua btn btn-primary btn-sm" onclick="GetDetails('@item.NV_USERNAME')">
+
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            |
+                                            <a class="item btn_Xoa btn btn-primary btn-sm" onclick="return confirm('Bạn chắc chắn muốn xóa?');" href="@Url.Action("xoa_NV1", new { id = item.NV_USERNAME})">
+
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                                }
+                            </table>
+                            @Html.PagedListPager(Model, page => Url.Action("ListNV", new { page, @searchString = @ViewBag.SearchString }))
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modal-Update">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sửa nhân viên</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="height:auto">
+                    <div class="box box-primary">
+                        @using (Html.BeginForm("Edit_NV1", "NhanVien", FormMethod.Post))
+                        {
+                            <div class="modal-body">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Tài khoản nhân viên :</label>
+                                        <input type="text" class="form-control" id="txtId" name="NV_USERNAME" placeholder="Tài khoản nhân viên" readonly>
+                                        <input type="text" class="form-control" id="txtmatkhau" name="NV_PASSWORD" style="background-color:lightgrey" placeholder="Mật khẩu" hidden>
+                                        <label for="exampleInputEmail1">Họ tên nhân viên :</label>
+                                        <input type="text" class="form-control" id="txtTenNV" name="NV_HOTEN" placeholder="Họ tên nhân viên">
+                                        <label for="exampleInputEmail1">Chức vụ :</label>
+                                        @Html.DropDownList("cv", null, new { @class = "form-control" })
+                                        <label for="exampleInputEmail1">Vai trò :</label>
+                                        @Html.DropDownList("vt", null, new { @class = "form-control" })
+                                        <label for="exampleInputEmail1">Phòng ban :</label>
+                                        @Html.DropDownList("pb", null, new { @class = "form-control" })
+                                        <label for="exampleInputEmail1">Số điện thoại :</label>
+                                        <input type="text" class="form-control" id="txtsdt" name="NV_SDT" placeholder="Số điện thoại">
+                                        <label for="exampleInputEmail1">Email :</label>
+                                        <input type="text" class="form-control" id="txtemail" name="NV_EMAIL" placeholder="Email">
+                                        <input type="text" class="form-control" id="txtavatar" name="NV_AVATAR" style="background-color:lightgrey" placeholder="" hidden>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Lưu</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section scripts {
+        <script type="text/javascript">
+            //bat loi khoa ngoai khi xoa
+            var loi = $(".LoiKhoaNgoai").val();
+            if (loi === '1')
+                alert("Vui lòng xóa,thay đổi lộ trình có nhân viên đang làm việc !!");
+            //sua
+            function GetDetails(id) {
+                $.ajax({
+
+                    url: "/NhanVien/EditNV/" + id,
+                    typr: "GET",
+                    contentType: "application/json;charset=UTF-8",
+                    dataType: "json",
+                    success: function (response) {
+                        $('#txtId').val(response.NV_USERNAME);
+                        $('#txtmatkhau').val(response.NV_PASSWORD);
+                        $('#txtTenNV').val(response.NV_HOTEN);
+                        $('#txtsdt').val(response.NV_SDT);
+                        $('#vt').val(response.VT_MA)
+                        $('#cv').val(response.CV_MA)
+                        $('#pb').val(response.PB_MA)
+                        $('#txtemail').val(response.NV_EMAIL);
+                        $('#txtavatar').val(response.NV_AVATAR);
+                        $('#modal-Update').modal('show');
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+                });
+                return false;
+            }
+            //bat loi khoa ngoai khi xoa
+            var loi = $(".TonTaiMa").val();
+            if (loi === '1')
+                alert("Mã nhân viên này đã tồn tại!!!");
+
+
+            //bat loi khi them
+
+            $(".btn_them").on('click', function () {
+                var maNV = $('#NV_USERNAME').val();
+                var MatKhau = $('#NV_PASSWORD').val();
+                var TenNV = $('#NV_HOTEN').val();
+                var Sdt = $('#NV_SDT').val();
+                var Email = $('#NV_EMAIL').val();
+
+
+                if (maNV === '') {
+                    alert("Tài khoản nhân viên không được rỗng!!");
+                    return false;
+                }
+
+                if (maNV.length > 10) {
+                    alert("Tài khoản nhân viên không được lớn hơn 10 ký tự!!");
+                    return false;
+                }
+
+                if (TenNV === '') {
+                    alert("Tên nhân viên không được rỗng!!");
+                    return false;
+                }
+
+                if (TenNV.length > 50) {
+                    alert("Tên nhân viên không được lớn hơn 256 ký tự!!");
+                    return false;
+                }
+
+                if (Sdt === '') {
+                    alert("Số điện thoại không được rỗng!!");
+                    return false;
+                }
+
+                if (Sdt.length > 11) {
+                    alert("Số điện thoại không được lớn hơn 15 ký tự!!");
+                    return false;
+                }
+                if (MatKhau === '') {
+                    alert("Mật khẩu không được rỗng!!");
+                    return false;
+                }
+
+                if (MatKhau.length > 50) {
+                    alert("Mật khẩu không được lớn hơn 50 ký tự!!");
+                    return false;
+                }
+            });
+        </script>
+    }
+
+
+
+

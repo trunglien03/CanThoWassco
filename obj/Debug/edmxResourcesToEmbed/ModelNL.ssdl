@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NL2_QLVAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CHUCVU">
+    <Key>
+      <PropertyRef Name="MA_ChucVu" />
+    </Key>
+    <Property Name="MA_ChucVu" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="TEN_ChucVu" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DON_KHANGCAO">
+    <Key>
+      <PropertyRef Name="MA_HoSo" />
+    </Key>
+    <Property Name="MA_HoSo" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MA_NhanVien" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Ngay_nhan_don_KC" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DON_KHOIKIEN">
+    <Key>
+      <PropertyRef Name="MA_HoSo" />
+    </Key>
+    <Property Name="MA_HoSo" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MA_NhanVien" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Ngay_nhan_don_KK" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DUONGSU">
+    <Key>
+      <PropertyRef Name="MA_DuongSu" />
+    </Key>
+    <Property Name="MA_DuongSu" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="MA_LoaiDS" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="CMND" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="HoTen_DS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NamSinh_DS" Type="datetime" Nullable="false" />
+    <Property Name="QueQuan_DS" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DiaChi_DS" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="SoDienThoai_DS" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="GioiTinh_DS" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HOSO_VUAN">
+    <Key>
+      <PropertyRef Name="MA_HoSo" />
+    </Key>
+    <Property Name="MA_HoSo" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="MA_NhanVien" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="MA_TrangThai" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="MA_LoaiVA" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Ten_VuAn" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NoiDung_VA" Type="nvarchar" MaxLength="350" Nullable="false" />
+    <Property Name="Loai_HS" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="LOAI_DS">
+    <Key>
+      <PropertyRef Name="MA_LoaiDS" />
+    </Key>
+    <Property Name="MA_LoaiDS" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Ten_LoaiDS" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOAI_VUAN">
+    <Key>
+      <PropertyRef Name="MA_LoaiVA" />
+    </Key>
+    <Property Name="MA_LoaiVA" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Ten_LoaiVA" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NHANVIEN">
+    <Key>
+      <PropertyRef Name="MA_NhanVien" />
+    </Key>
+    <Property Name="MA_NhanVien" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="MA_ChucVu" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="MA_QNSD" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="MA_PhongBan" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="HoTen_NV" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NamSinh_NV" Type="datetime" Nullable="false" />
+    <Property Name="GioiTinh_NV" Type="bit" Nullable="false" />
+    <Property Name="QueQuan_NV" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CMND_NV" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="SoDienThoai_NV" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="MatKhau" Type="char" MaxLength="16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PHONGBAN">
+    <Key>
+      <PropertyRef Name="MA_PhongBan" />
+    </Key>
+    <Property Name="MA_PhongBan" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Ten_PB" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QUYEN_NSD">
+    <Key>
+      <PropertyRef Name="MA_QNSD" />
+    </Key>
+    <Property Name="MA_QNSD" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Ten_QNSD" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TRANGTHAI_HS">
+    <Key>
+      <PropertyRef Name="MA_TT" />
+    </Key>
+    <Property Name="MA_TT" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Ten_TT" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VAITRO_NV">
+    <Key>
+      <PropertyRef Name="MA_VaiTro" />
+    </Key>
+    <Property Name="MA_VaiTro" Type="char" MaxLength="5" Nullable="false" />
+    <Property Name="Ten_VT" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="NL2_QLVAModelStoreContainer">
+    <EntitySet Name="CHUCVU" EntityType="Self.CHUCVU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DON_KHANGCAO" EntityType="Self.DON_KHANGCAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DON_KHOIKIEN" EntityType="Self.DON_KHOIKIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DUONGSU" EntityType="Self.DUONGSU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOSO_VUAN" EntityType="Self.HOSO_VUAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_DS" EntityType="Self.LOAI_DS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOAI_VUAN" EntityType="Self.LOAI_VUAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHONGBAN" EntityType="Self.PHONGBAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QUYEN_NSD" EntityType="Self.QUYEN_NSD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TRANGTHAI_HS" EntityType="Self.TRANGTHAI_HS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VAITRO_NV" EntityType="Self.VAITRO_NV" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

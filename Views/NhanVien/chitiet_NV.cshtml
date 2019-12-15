@@ -1,0 +1,59 @@
+﻿@model NienLuan2.Models.NHANVIEN
+
+@{
+    ViewBag.Title = "chitiet_NV";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Chi tiết nhân viên</h2>
+<div>
+ 
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Mã chức vụ
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.VT_MA)
+        </dd>
+        <dt>
+            Mã nhân viên
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NV_USERNAME)
+        </dd>
+        <dt>
+            Họ tên nhân viên
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NV_HOTEN)
+        </dd>
+        <dt>
+            Số điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NV_SDT)
+        </dd>
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NV_EMAIL)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.MatKhau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit_NV", new { id = Model.NV_USERNAME }) |
+    @Html.ActionLink("Trở về", "ListNV")
+</p>

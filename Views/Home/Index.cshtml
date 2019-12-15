@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutTrangChu.cshtml";
+}
+<div class="wrap-slide clearfix">
+    <div class="top">
+        <div class="content-header">
+            <div class="one-half">
+                <ul class="contact-info inline pull-left">
+                    <li class="phone"><a href="#">012345678</a></li>
+                    <li class="email"><a href="#">trungb1507330@student.ctu.edu.vn</a></li>
+                </ul>
+            </div><!-- /.one-half -->
+            <div class="one-half">
+                <ul class="contact-info inline pull-right clearfix">
+                   @* <li class="terms"><a href="#">Terms of Use</a></li>*@ 
+                    <li class="singin">@Html.ActionLink("Đăng nhập", "DangNhap", "DangNhap")</li>
+                    <li class="search"><a href="#"><span class="icon-zoom-outline"></span></a></li>
+                </ul>
+            </div><!-- /.one-half -->
+        </div><!-- /.content-header -->
+    </div><!-- /.top -->
+    <!-- Header -->
+    <header id="header" class="header">
+        <div class="header-wrap">
+            <div class="content-header">
+                <div class="wrap-nav">
+                    <div class="btn-menu"></div><!-- //mobile menu button -->
+                    <nav id="mainnav" class="mainnav">
+                        <ul class="menu">
+                            <li class="active">
+                                <a href="index-2.html">Trang chủ</a>
+                              
+                            </li>
+                            <li>
+                                <a href="blog_post_sidebar.html">Giới thiệu</a>
+                                <ul class="submenu">
+                                    <li><a href="blog_left_sidebar.html">Lịch sử hình thành</a></li>
+                                    <li><a href="blog_full_width.html">Cơ cấu tổ chức</a></li>
+                                </ul><!-- /.submenu -->
+                            </li>
+                            <li>
+                                <a href="event.html">Tin tức - Sự kiện</a>
+                                <ul class="submenu">
+                                    <li><a href="event1.html">Thông báo công ty</a></li>
+                                    <li><a href="@Url.Action("DangNhap","DangNhap")">Thông tin nội bộ</a></li>
+                                    <li><a href="event3.html">Văn bản hành chính</a></li>
+                                    <li><a href="event4.html">Hỗ trợ khách hàng</a></li>
+                                </ul><!-- /.submenu -->
+                            </li>
+                            <li>
+                                <a href="gallery_regular.html">Sản phẩm và dịch vụ</a>
+                                <ul class="submenu">
+                                    <li><a href="event2.html">Nước sinh hoạt</a></li>
+                                    <li><a href="event1.html">Nước đóng chai</a></li>
+                                    <li><a href="event3.html">Thiết bị ngành nước</a></li>
+                                    <li><a href="event4.html">Khách hàng cần biết</a></li>
+                                </ul>
+                            </li>
+                            <li class="sub-right">
+                                <a href="#">Mẫu đơn</a>
+                                
+                            </li>
+                            <li>
+                                <a href="contact.html">Liên hệ</a>
+                            </li>
+                        </ul><!-- /.menu -->
+                    </nav><!-- /.mainnav -->
+                </div><!-- /.wrap-nav -->
+                <div class="wrap-social clearfix">
+                    <ul class="besmart-socials">
+                        <li><a href="https://www.facebook.com/"><span class="icon-social facebook">F</span></a></li>
+                        <li><a href="#"><span class="icon-social">G</span></a></li>
+                        <li><a href="#"><span class="icon-social linkedin">I</span></a></li>
+                        <li><a href="#"><span class="icon-social pinterest">:</span></a></li>
+                    </ul>
+                </div><!-- /.social-wrap -->
+            </div><!-- /.content-header -->
+        </div><!-- /.header-wrap -->
+    </header><!-- /.header -->
+
+    <div class="top-search">
+        <div class="content-header">
+            <input type="text" class="ts-search" placeholder="Nhập từ cần tìm...">
+            <a href="#"><span class="icon-zoom-outline"></span></a>
+        </div><!-- /.content-header -->
+    </div><!-- /.top-search -->
+
+    <div class="roll-slider" data-auto="true" data-effect="slide" data-direction="horizotal">
+        <div class="flexslider" >
+            <ul class="slides">
+                <li>
+                    <img src="~/Content/images/image2.jpg" alt="image" class="roll-zoBackground" style="padding-top: 90px;">
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.roll-slider -->
+</div><!-- /.wrap-slider -->

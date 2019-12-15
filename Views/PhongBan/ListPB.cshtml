@@ -1,0 +1,218 @@
+﻿@model PagedList.IPagedList<NienLuan2.Models.PHONGBAN>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                DANH SÁCH PHÒNG BAN
+            </div>
+            <div class="card-header">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modal-mrole" style="margin-right:30px" ;>Thêm phòng ban</button>
+                @using (Html.BeginForm("ListPB", "PhongBan", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+            {
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Tìm kiếm....." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi"/>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" cellspacing="0">
+                            <tr>
+                                <th>
+                                    STT
+                                </th>
+                                <th>
+                                    Mã phòng ban
+                                </th>
+                                <th>
+                                    Tên phòng ban
+                                </th>
+                                <th>
+                                    Thao tác
+                                </th>
+                            </tr>
+                            @{
+                                int count = 1;
+                            }
+                            @foreach (var item in Model)
+            {
+                                <tr>
+                                    <td>
+                                        @count
+                                        @{
+                                            count++;
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PB_MA)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PB_TEN)
+                                    </td>
+                                    <td>
+
+                                        <button class="item btn_Sua btn btn-primary btn-sm" onclick="GetDetails('@item.PB_MA')">
+
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        |
+                                        <a class="item btn_Xoa btn btn-primary btn-sm" onclick="return confirm('Bạn chắc chắn muốn xóa?');" href="@Url.Action("xoa_PB1",new { id = item.PB_MA})">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                            }
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("ListPB", new { page, @searchString = @ViewBag.SearchString }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+<div class="modal fade" id="modal-mrole">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm phòng ban</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("them_PB", "PhongBan", FormMethod.Post))
+                    {
+                        <div class="modal-body" style="height:auto">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mã phòng ban :</label>
+                                    <input type="text" class="form-control " id="PB_MA" name="PB_MA" placeholder="Mã phòng ban" maxlength="6">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên lộ trình :</label>
+                                    <input type="text" class="form-control" id="PB_TEN" name="PB_TEN" placeholder="Tên phòng ban">
+                                </div>
+                            </div>      
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary btn_them">Thêm</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-Update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sửa phòng ban</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="height:auto">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("sua_PB1", "PhongBan", FormMethod.Post))
+                    {
+                        <div class="modal-body">
+                            <div class="col-md-12">
+                                <div class="form-group" id="signupform">
+                                    <label for="exampleInputEmail1">Mã phòng ban:</label>
+                                    <input type="text" class="form-control" id="txtMaPB" name="PB_MA" style="background-color:lightgrey" placeholder="Mã phòng ban" readonly>
+                                    <label for="exampleInputEmail1">Tên phòng ban :</label>
+                                    <input type="text" class="form-control" id="txtTenPB" name="PB_TEN" placeholder="Tên phòng ban">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts {
+
+    <script type="text/javascript">
+
+        //bat loi khoa ngoai khi xoa
+        var loi = $(".LoiKhoaNgoai").val();
+        if (loi === '1')
+            alert("Vui lòng xóa nhân viên thuộc phòng ban trước !!");
+
+    function GetDetails(id) {
+    $.ajax({
+
+        url: "/PhongBan/EditPB/" + id,
+        typr: "GET",
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (response) {
+            $('#txtMaPB').val(response.PB_MA);
+            //document.getElementById("txtId").disabled = true;
+            $('#txtTenPB').val(response.PB_TEN);
+            $('#modal-Update').modal('show');
+        },
+        error: function (response) {
+
+            alert(response.responseText);
+        }
+    });
+    return false;
+    }
+
+
+    //bat loi khi them
+
+    $(".btn_them").on('click', function () {
+        var maPhongBan = $('#PB_MA').val();
+        var TenPhongBann = $('#PB_TEN').val();;
+
+        if (maPhongBan === '')
+        {
+            alert("Mã phòng ban không được rỗng!!");
+            return false;
+        }
+
+        if (maPhongBan.length > 6)
+        {
+            alert("Mã phòng ban không được lớn hơn 6 kí tự!!");
+            return false;
+        }
+    });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+

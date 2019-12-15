@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0c995c658494ffb8fc1847d8bad6f7d" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="Cty_CapNuocModel.CHI_SO_NUOC" Width="1.5" PointX="9.75" PointY="8.375" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.CHUCVU" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.DOI_TUONG" Width="1.5" PointX="5.25" PointY="11.75" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.DONGIA" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.HINHTHUC_THANHTOAN" Width="1.5" PointX="5.25" PointY="17.25" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.KHACH_HANG" Width="1.5" PointX="7.5" PointY="7.875" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.KHU_VUC" Width="1.5" PointX="5.25" PointY="14.5" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.KY_GHI" Width="1.5" PointX="7.5" PointY="15.5" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.LO_TRINH" Width="1.5" PointX="5.25" PointY="8.125" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.MAIN_MENU" Width="1.5" PointX="3.75" PointY="20.25" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.NHANVIEN" Width="1.5" PointX="3" PointY="3.375" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.PHONGBAN" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.PHUONG" Width="1.5" PointX="3" PointY="14.5" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.QUAN" Width="1.5" PointX="0.75" PointY="14.625" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.SUB_MENU" Width="1.5" PointX="6" PointY="3.875" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.TRANG_THAI" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.TRANG_THAI_PT" Width="1.5" PointX="7.5" PointY="13.125" />
+        <EntityTypeShape EntityType="Cty_CapNuocModel.VAITRO" Width="1.5" PointX="0.75" PointY="4.25" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_CHI_SO_N_CSN_KH_KHACH_HA" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_CHI_SO_N_KG_CSN_KY_GHI" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_SCN_TH_PT_TT_TRANG_TH" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_NHANVIEN_CV_NV_CHUCVU" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_DOI_TUON_DT_GIA_DONGIA" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_KHACH_HA_KH_DT_DOI_TUON" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_KHACH_HA_KH_HTTT_HINHTHUC" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_KHACH_HA_KH_KV_KHU_VUC" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_KHACH_HA_KH_TT_TRANG_TH" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_KHACH_HA_LT_KH_LO_TRINH" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_KHU_VUC_KV_PHUONG_PHUONG" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_LO_TRINH_NV_LT_NHANVIEN" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_SUB_MENU_MAIN_SUB_MAIN_MEN" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_NHANVIEN_ND_VT_VAITRO" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_NHANVIEN_PB_NV_PHONGBAN" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_PHUONG_PHUONG_QU_QUAN" />
+        <AssociationConnector Association="Cty_CapNuocModel.FK_SUB_MENU_VT_SUB_VAITRO" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

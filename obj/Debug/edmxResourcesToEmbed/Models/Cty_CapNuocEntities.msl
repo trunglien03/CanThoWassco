@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Cty_CapNuocModelStoreContainer" CdmEntityContainer="Cty_CapNuocEntities">
+    <EntitySetMapping Name="CHI_SO_NUOC">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.CHI_SO_NUOC">
+        <MappingFragment StoreEntitySet="CHI_SO_NUOC">
+          <ScalarProperty Name="THANH_TIEN" ColumnName="THANH_TIEN" />
+          <ScalarProperty Name="TTPT_MA" ColumnName="TTPT_MA" />
+          <ScalarProperty Name="CSN_TIEUTHU2" ColumnName="CSN_TIEUTHU2" />
+          <ScalarProperty Name="CSN_TIEUTHU1" ColumnName="CSN_TIEUTHU1" />
+          <ScalarProperty Name="CSN_TIEUTHU" ColumnName="CSN_TIEUTHU" />
+          <ScalarProperty Name="CSN_CU" ColumnName="CSN_CU" />
+          <ScalarProperty Name="CSN_MOI" ColumnName="CSN_MOI" />
+          <ScalarProperty Name="CSN_MA" ColumnName="CSN_MA" />
+          <ScalarProperty Name="KYGHI_MA" ColumnName="KYGHI_MA" />
+          <ScalarProperty Name="KH_MA" ColumnName="KH_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHUCVUs">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.CHUCVU">
+        <MappingFragment StoreEntitySet="CHUCVU">
+          <ScalarProperty Name="CV_TEN" ColumnName="CV_TEN" />
+          <ScalarProperty Name="CV_MA" ColumnName="CV_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DOI_TUONG">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.DOI_TUONG">
+        <MappingFragment StoreEntitySet="DOI_TUONG">
+          <ScalarProperty Name="DT_TEN" ColumnName="DT_TEN" />
+          <ScalarProperty Name="DG_MA" ColumnName="DG_MA" />
+          <ScalarProperty Name="DT_MA" ColumnName="DT_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DONGIAs">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.DONGIA">
+        <MappingFragment StoreEntitySet="DONGIA">
+          <ScalarProperty Name="GIATIEN" ColumnName="GIATIEN" />
+          <ScalarProperty Name="DG_MA" ColumnName="DG_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HINHTHUC_THANHTOAN">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.HINHTHUC_THANHTOAN">
+        <MappingFragment StoreEntitySet="HINHTHUC_THANHTOAN">
+          <ScalarProperty Name="HTTT_TEN" ColumnName="HTTT_TEN" />
+          <ScalarProperty Name="HTTT_MA" ColumnName="HTTT_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHACH_HANG">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.KHACH_HANG">
+        <MappingFragment StoreEntitySet="KHACH_HANG">
+          <ScalarProperty Name="KH_TENNGANHANG" ColumnName="KH_TENNGANHANG" />
+          <ScalarProperty Name="KH_SOTK" ColumnName="KH_SOTK" />
+          <ScalarProperty Name="KH_SDT" ColumnName="KH_SDT" />
+          <ScalarProperty Name="KH_DIACHITHANHTOAN" ColumnName="KH_DIACHITHANHTOAN" />
+          <ScalarProperty Name="KH_DIACHILAPDAT" ColumnName="KH_DIACHILAPDAT" />
+          <ScalarProperty Name="KH_HOTEN" ColumnName="KH_HOTEN" />
+          <ScalarProperty Name="KV_MA" ColumnName="KV_MA" />
+          <ScalarProperty Name="DT_MA" ColumnName="DT_MA" />
+          <ScalarProperty Name="TT_MA" ColumnName="TT_MA" />
+          <ScalarProperty Name="HTTT_MA" ColumnName="HTTT_MA" />
+          <ScalarProperty Name="LT_MA" ColumnName="LT_MA" />
+          <ScalarProperty Name="KH_MA" ColumnName="KH_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KHU_VUC">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.KHU_VUC">
+        <MappingFragment StoreEntitySet="KHU_VUC">
+          <ScalarProperty Name="KV_TEN" ColumnName="KV_TEN" />
+          <ScalarProperty Name="PHUONG_MA" ColumnName="PHUONG_MA" />
+          <ScalarProperty Name="KV_MA" ColumnName="KV_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KY_GHI">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.KY_GHI">
+        <MappingFragment StoreEntitySet="KY_GHI">
+          <ScalarProperty Name="KYGHI_TEN" ColumnName="KYGHI_TEN" />
+          <ScalarProperty Name="KYGHI_MA" ColumnName="KYGHI_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LO_TRINH">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.LO_TRINH">
+        <MappingFragment StoreEntitySet="LO_TRINH">
+          <ScalarProperty Name="LT_TEN" ColumnName="LT_TEN" />
+          <ScalarProperty Name="NV_USERNAME" ColumnName="NV_USERNAME" />
+          <ScalarProperty Name="LT_MA" ColumnName="LT_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAIN_MENU">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.MAIN_MENU">
+        <MappingFragment StoreEntitySet="MAIN_MENU">
+          <ScalarProperty Name="MAIN_ICON" ColumnName="MAIN_ICON" />
+          <ScalarProperty Name="MAIN_NAME" ColumnName="MAIN_NAME" />
+          <ScalarProperty Name="MAIN_ID" ColumnName="MAIN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NHANVIENs">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.NHANVIEN">
+        <MappingFragment StoreEntitySet="NHANVIEN">
+          <ScalarProperty Name="NV_AVATAR" ColumnName="NV_AVATAR" />
+          <ScalarProperty Name="NV_EMAIL" ColumnName="NV_EMAIL" />
+          <ScalarProperty Name="NV_SDT" ColumnName="NV_SDT" />
+          <ScalarProperty Name="NV_HOTEN" ColumnName="NV_HOTEN" />
+          <ScalarProperty Name="NV_PASSWORD" ColumnName="NV_PASSWORD" />
+          <ScalarProperty Name="PB_MA" ColumnName="PB_MA" />
+          <ScalarProperty Name="CV_MA" ColumnName="CV_MA" />
+          <ScalarProperty Name="VT_MA" ColumnName="VT_MA" />
+          <ScalarProperty Name="NV_USERNAME" ColumnName="NV_USERNAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHONGBANs">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.PHONGBAN">
+        <MappingFragment StoreEntitySet="PHONGBAN">
+          <ScalarProperty Name="PB_TEN" ColumnName="PB_TEN" />
+          <ScalarProperty Name="PB_MA" ColumnName="PB_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PHUONGs">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.PHUONG">
+        <MappingFragment StoreEntitySet="PHUONG">
+          <ScalarProperty Name="PHUONG_TEN" ColumnName="PHUONG_TEN" />
+          <ScalarProperty Name="QUAN_MA" ColumnName="QUAN_MA" />
+          <ScalarProperty Name="PHUONG_MA" ColumnName="PHUONG_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QUANs">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.QUAN">
+        <MappingFragment StoreEntitySet="QUAN">
+          <ScalarProperty Name="QUAN_TEN" ColumnName="QUAN_TEN" />
+          <ScalarProperty Name="QUAN_MA" ColumnName="QUAN_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUB_MENU">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.SUB_MENU">
+        <MappingFragment StoreEntitySet="SUB_MENU">
+          <ScalarProperty Name="SUB_ACTION" ColumnName="SUB_ACTION" />
+          <ScalarProperty Name="SUB_CONTROLLER" ColumnName="SUB_CONTROLLER" />
+          <ScalarProperty Name="SUB_NAME" ColumnName="SUB_NAME" />
+          <ScalarProperty Name="MAIN_ID" ColumnName="MAIN_ID" />
+          <ScalarProperty Name="VT_MA" ColumnName="VT_MA" />
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANG_THAI">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.TRANG_THAI">
+        <MappingFragment StoreEntitySet="TRANG_THAI">
+          <ScalarProperty Name="TT_TEN" ColumnName="TT_TEN" />
+          <ScalarProperty Name="TT_MA" ColumnName="TT_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANG_THAI_PT">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.TRANG_THAI_PT">
+        <MappingFragment StoreEntitySet="TRANG_THAI_PT">
+          <ScalarProperty Name="TTPT_TEN" ColumnName="TTPT_TEN" />
+          <ScalarProperty Name="TTPT_MA" ColumnName="TTPT_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VAITROes">
+      <EntityTypeMapping TypeName="Cty_CapNuocModel.VAITRO">
+        <MappingFragment StoreEntitySet="VAITRO">
+          <ScalarProperty Name="VT_TEN" ColumnName="VT_TEN" />
+          <ScalarProperty Name="VT_MA" ColumnName="VT_MA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

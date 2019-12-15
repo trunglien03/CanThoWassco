@@ -1,0 +1,235 @@
+﻿@model PagedList.IPagedList<NienLuan2.Models.LO_TRINH>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                DANH SÁCH LỘ TRÌNH
+            </div>
+            <div class="card-header">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modal-mrole" style="margin-right:20px";>Thêm lộ trình</button>
+                @using (Html.BeginForm("ListLT", "LoTrinh", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+            {
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Nhập mã lộ trình cần tìm..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable">
+                            <tr>
+                                <th>
+                                    STT
+                                </th>
+                                <th>
+                                    Mã lộ trình
+                                </th>
+                                <th>
+                                    Tên lộ trình
+                                </th>
+                                <th>
+                                    Nhân viên thi công
+                                </th>
+                                <th>
+                                    Thao tác
+                                </th>
+                            </tr>
+
+                            @{
+                                int count = 1;
+                            }
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @count
+                                        @{
+                                            count++;
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LT_MA)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LT_TEN)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NHANVIEN.NV_HOTEN)
+                                    </td>
+                                    <td>
+                                        @*<button class="item btn_ChiTiet btn btn-success btn-sm" onclick="GetDetails1('@item.LT_MA')">
+
+                                            <i class="fas fa-info"></i>
+                                        </button>*@
+                                        <button class="item btn_Sua btn btn-primary btn-sm" onclick="GetDetails('@item.LT_MA')">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        |
+                                        <a class="item btn_Xoa btn btn-primary btn-sm" onclick="return confirm('Bạn chắc chắn muốn xóa?');" href="@Url.Action("xoa_LT1", new { id = item.LT_MA})">
+
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                           }
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("ListLT", new { page, @searchString = @ViewBag.SearchString }))
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+
+<div class="modal fade" id="modal-mrole">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm lộ trình</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("AddLT", "LoTrinh", FormMethod.Post))
+                    {
+                        <div class="modal-body" style="height:350px">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mã lộ trình :</label>
+                                    <input type="text" class="form-control " id="LT_MA" name="LT_MA" placeholder="Mã lộ trình" maxlength="6">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên lộ trình :</label>
+                                    <input type="text" class="form-control" id="LT_TEN" name="LT_TEN" placeholder="Tên lộ trình">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Nhân viên thi công :</label>
+                                    @Html.DropDownList("vt",null, new { @class = "form-control"})
+                             </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary btn_them">Thêm</button>
+                            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                        </div>                    
+                </div>
+                    }
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modal-Update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sửa lộ trình</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="height:350px">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("Edit_LT1", "LoTrinh", FormMethod.Post))
+                    {
+                        <div class="modal-body">
+                            <div class="col-md-12">
+                                <div class="form-group" id="signupform">
+                                    @*<input id="txtMaLT" name="MA_PhongBan" type="hidden">*@                                   
+                                    <label for="exampleInputEmail1">Mã lộ trình:</label>
+                                    <input type="text" class="form-control" id="txtMaLT1"  name="LT_MA" placeholder="Mã lộ trình"  readonly>                                   
+                                    <label for="exampleInputEmail1">Tên lộ trình :</label>
+                                    <input type="text" class="form-control" id="txtTenLT" name="LT_TEN" placeholder="Tên lộ trình">
+                                    <label for="exampleInputEmail1">Nhân viên thi công trực thuộc :</label>
+                                    @Html.DropDownList("nv", null, new { @class = "form-control" })                            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+   <script type="text/javascript">
+    function GetDetails(id) {
+    $.ajax({
+
+        url: "/LoTrinh/EditLT/" + id,
+        typr: "GET",
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (response) {
+           // $('#txtMaLT').val(response.LT_MA);
+            $('#txtMaLT1').val(response.LT_MA);
+           // document.getElementById("txtMaLT1").disabled = true;
+            $('#txtTenLT').val(response.LT_TEN);
+            $('#nv').val(response.NV_USERNAME);
+            $('#modal-Update').modal('show');
+        },
+        error: function (response) {
+            alert(response.responseText);
+        }
+    });
+    return false;
+    }
+
+
+    //bat loi khoa ngoai khi xoa
+    var loi = $(".LoiKhoaNgoai").val();
+    if (loi === '1')
+        alert("Vui lòng xóa nhân viên thuộc lộ trình trước !!");
+
+
+    //bat loi khi them
+
+    $(".btn_them").on('click', function () {
+        var maLT = $('#LT_MA').val();
+        var TenLT = $('#LT_TEN').val();;
+
+        if (maLT === '')
+        {
+            alert("Mã lộ trình không được rỗng!!");
+            return false;
+        }
+
+        if (maLT.length > 6)
+        {
+            alert("Mã lộ trình không được lớn hơn 6 kí tự!!");
+            return false;
+        }
+    });
+    </script>
+}
+
+
+
+
+
+
+
+

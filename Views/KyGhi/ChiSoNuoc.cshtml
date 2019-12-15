@@ -1,0 +1,149 @@
+﻿@model PagedList.IPagedList<NienLuan2.Models.CHI_SO_NUOC>
+@using PagedList.Mvc;
+@using NienLuan2.Models;
+
+@{
+    Cty_CapNuocEntities db = new Cty_CapNuocEntities();
+
+    var Thang_1 = from c in db.CHI_SO_NUOC
+                  select new
+                  {
+                      Ma = c.CSN_MOI
+                  };
+
+    var listky = db.KY_GHI.ToList();
+
+
+    string ma = string.Empty;
+    HttpCookie reqCookies = Request.Cookies["MaKG"];
+    if (reqCookies != null)
+    {
+        ma = reqCookies["MaKG"].ToString();
+    }
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                DANH SÁCH CHỈ SỐ NƯỚC
+            </div>
+            <div class="card-header">     
+                &nbsp; &nbsp; &nbsp; @using (Html.BeginForm("ChiSoNuoc", "KyGhi", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+            {
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Nhập mã kỳ ghi cần tìm..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+                @Html.DropDownList("KYGHI_MA", ViewBag.kyghi as SelectList,new { @style = "border:1px solid silver;background:white;", @class = "btn btn-default", @required = "required" })
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="tblChiSoNuoc" class="table table-bordered table-hover">
+                            <tbody></tbody>
+
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("ChiSoNuoc", new { page, @searchString = @ViewBag.SearchString }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+            $("#tblChiSoNuoc tbody tr").remove();
+            $.ajax({
+                type: 'GET',
+                url: "/KyGhi/GetChiSoNuoc",
+                dataType: 'json',
+                data: { id: $('#KYGHI_MA').val() },
+                success: function (data) {
+                    var items = '';
+                    var rows = "<tr>"
+                        + "<th align='left' class='ChiSoNuocTableTH'>Mã Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Họ Tên Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Mã Kỳ Ghi</th><th align='left' class='ChiSoNuocTableTH'>Mã Chỉ Số Nước</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Cũ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Mới</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 1</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 2</th>"
+                        + "</tr>";
+                    $('#tblChiSoNuoc tbody').append(rows);
+
+                    $.each(data, function (i, item) {
+                        var rows = "<tr>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_HOTEN + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KYGHI_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_CU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_MOI + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU1 + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU2 + "</td>"
+                            + "</tr>";
+                        $('#tblChiSoNuoc tbody').append(rows);
+                    });
+
+                },
+                error: function (ex) {
+
+                }
+            });
+            return false;
+        });
+
+    $(document).ready(function () {
+        $('#KYGHI_MA').change(function () {
+            $("#tblChiSoNuoc tbody tr").remove();
+            $.ajax({
+                type: 'GET',
+                url: "/KyGhi/GetChiSoNuoc",
+                dataType: 'json',
+                data: { id: $('#KYGHI_MA').val()},
+                success: function (data) {
+                    var items = '';
+                    var rows = "<tr>"
+                        + "<th align='left' class='ChiSoNuocTableTH'>Mã Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Họ Tên Khách Hàng</th><th align='left' class='ChiSoNuocTableTH'>Mã Kỳ Ghi</th><th align='left' class='ChiSoNuocTableTH'>Mã Chỉ Số Nước</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Cũ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Nước Mới</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 1</th><th align='left' class='ChiSoNuocTableTH'>Chỉ Số Tiêu Thụ 2</th>"
+                        + "</tr>";
+                    $('#tblChiSoNuoc tbody').append(rows);
+
+                    $.each(data, function (i, item) {
+                        var rows = "<tr>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_HOTEN + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KYGHI_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_CU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_MOI + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU1 + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU2 + "</td>"
+                            + "</tr>";
+                        $('#tblChiSoNuoc tbody').append(rows);
+                    });
+
+                },
+                error: function (ex) {
+
+                }
+            });
+            return false;
+        });
+    });
+
+
+
+
+</script>
+
+
+
+
+
+
+

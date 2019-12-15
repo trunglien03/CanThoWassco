@@ -1,0 +1,303 @@
+﻿@model PagedList.IPagedList<NienLuan2.Models.KHACH_HANG>
+@using PagedList.Mvc;
+@using NienLuan2.Models
+
+@{  
+    Cty_CapNuocEntities db = new Cty_CapNuocEntities();
+    var listQUAN = db.PHUONGs.ToList();
+    var listPHUONG = db.QUANs.ToList();
+}
+
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                DANH SÁCH KHÁCH HÀNG
+            </div>
+            <div class="card-header">
+                @*<button class="btn btn-success" data-toggle="modal" data-target="#modal-mrole" style="margin-right:20px" ;>Thêm khách hàng</button>*@
+                <a class="btn btn-primary" @Html.ActionLink("THÊM KHÁCH HÀNG", "them_KH", "KhachHang", null, new { @class = "btn btn-sucesss" })</a>
+                @using (Html.BeginForm("ListKH", "KhachHang", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+            {
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Tìm kiếm..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable">
+                            <tr>
+                                <th>
+                                    Mã KH
+                                </th>
+                                <th>
+                                    Tên khách hàng
+                                </th>
+                                <th>
+                                    Khu vực
+                                </th>          
+                                <th>
+                                    Lộ trình
+                                </th>
+                                <th>
+                                    Hình thức
+                                </th>
+                                <th>
+                                    Đối tượng
+                                </th>
+                                <th>
+                                    Trạng thái
+                                </th>
+                                <th>
+                                    Thao tác
+                                </th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.KH_MA)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.KH_HOTEN)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.KHU_VUC.KV_TEN)
+                                    </td>                        
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LO_TRINH.LT_MA)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HINHTHUC_THANHTOAN.HTTT_TEN)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DOI_TUONG.DT_TEN)
+                                    </td>
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.TRANG_THAI.TT_TEN)*@
+                                        @{  string tt;
+                                                    tt = item.TT_MA;
+                                            if (tt == "TT01")
+                                            {
+                                            <label class="item  btn btn-success btn-sm" name="TT01" value="TT01">Đang sử dụng</label>
+                                            }
+                                            else
+                                            { <label class="item  btn btn-danger btn-sm" name="TT02" value="TT02">Dừng sử dụng</label>}
+
+                                        }
+                                        @*<button class="item  btn btn-success btn-sm" type="submit" name="Open" value="TT_MA" @(item.TT_MA != "TT01" ? "disabled='disabled'" : "")> Đang sử dụng</button>
+                                         -
+                                       <button class="item  btn btn-danger btn-sm" type="submit" name="Close" value="TT_MA" @(item.TT_MA != "TT02" ? "disabled='disabled'" : "")> Ngưng sử dụng</button>*@
+                                    </td>
+                                    <td>
+                                        <button class="item btn_Sua btn btn-primary btn-sm" onclick="GetDetails('@item.KH_MA')">
+
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        |
+                                        <a class="item btn_Xoa btn btn-primary btn-sm" onclick="return confirm('Bạn chắc chắn muốn xóa?');" href="@Url.Action("xoa_KH1", new { id = item.KH_MA})">
+
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("ListKH", new { page, @searchString = @ViewBag.SearchString }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-Update">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Sửa khách hàng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="height:auto">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("Edit_KH1", "KhachHang", FormMethod.Post))
+                    {
+                        <div class="modal-body">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mã số khách hàng :</label>
+                                    <input type="text" class="form-control" id="txtId" name="KH_MA" placeholder="Mã số khách hàng" readonly>
+                                    <label for="exampleInputEmail1">Họ và tên khách hàng :</label>
+                                    <input type="text" class="form-control" id="txttenKH" name="KH_HOTEN"  placeholder="Họ và tên khách hàng" >
+                                    <label for="exampleInputEmail1">Đối tượng :</label>
+                                    @Html.DropDownList("dt", null, new { @class = "form-control" })
+                                    <label for="exampleInputEmail1">Số điện thoại :</label>
+                                    <input type="text" class="form-control" id="txtsdt" name="KH_SDT" placeholder="Số điện thoại">                    
+                                    <label for="exampleInputEmail1">Khu vực:</label>
+                                    @Html.DropDownList("kv", null, htmlAttributes: new { @class = "form-control" })                                                                                                           
+                                    <label for="exampleInputEmail1">Địa chỉ lắp đặt :</label>
+                                    <input type="text" class="form-control" id="txtDCLD" name="KH_DIACHILAPDAT" placeholder="Địa chỉ lắp đặt">
+                                    <label for="exampleInputEmail1">Địa chỉ thanh toán :</label>
+                                    <input type="text" class="form-control" id="txtDCTT" name="KH_DIACHITHANHTOAN" placeholder="Địa chỉ thanh toán">
+                                    <label for="exampleInputEmail1">Lộ trình :</label>
+                                    @Html.DropDownList("lt", null, new { @class = "form-control" })
+                                    <label for="exampleInputEmail1">Hình thức thanh toán:</label>
+                                    @Html.DropDownList("httt", null, new { @class = "form-control" })                               
+                                    <label for="exampleInputEmail1">Số tài khoản ngân hàng :</label>
+                                    <input type="text" class="form-control" id="txtstk" name="KH_SOTK" placeholder="Số tài khoản ngân hàng">
+                                    <label for="exampleInputEmail1">Tên ngân hàng :</label>
+                                    <input type="text" class="form-control" id="txttnh" name="KH_TENNGANHANG" placeholder="Tên ngân hàng">
+                                    <label for="exampleInputEmail1">Trạng thái :</label>
+                                    @Html.DropDownList("tt", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">Lưu</button>
+                            <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#QUAN_MA").change(function () {
+
+                var quanID = $(this).val();
+
+                $.ajax({
+                    type: "post",
+                    url: "/KhachHang/GetPhuongList?QUAN_MA=" + quanID,
+                    contentType: "html",
+                    success: function (response) {
+                        console.log(response);
+                        $("#PHUONG_MA").empty();
+                        $("#PHUONG_MA").append(response);
+                    }
+                })
+            })
+            $("#PHUONG_MA").change(function () {
+                var phuongID = $(this).val();
+
+                $.ajax({
+                    type: "post",
+                    url: "/KhachHang/GetKhuVucList?PHUONG_MA=" + phuongID,
+                    contentType: "html",
+                    success: function (response) {
+                        $("#KV_MA").empty();
+                        $("#KV_MA").append(response);
+                    }
+                })
+            })
+        })
+            //sua
+        function GetDetails(id) {
+            $.ajax({
+
+            url: "/KhachHang/EditKH/" + id,
+            typr: "GET",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (response) {
+                $('#txtId').val(response.KH_MA);
+                $('#txttenKH').val(response.KH_HOTEN);
+                //$('#txtChucVu').val(response.VT_MA);
+                $('#txtDCLD').val(response.KH_DIACHILAPDAT);
+                $('#txtDCTT').val(response.KH_DIACHITHANHTOAN);
+                $('#txtsdt').val(response.KH_SDT);
+                $('#txtstk').val(response.KH_SOTK);
+                $('#txttnh').val(response.KH_TENNGANHANG);
+                $('#dt').val(response.DT_MA)
+                $('#lt').val(response.LT_MA)
+                $('#httt').val(response.HTTT_MA)
+                $('#tt').val(response.TT_MA)
+                $("#kv").val(response.KV_MA);
+                $('#modal-Update').modal('show');
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+        return false;
+        }
+
+        //bat loi khoa ngoai khi xoa
+        var loi = $(".TonTaiMa").val();
+        if (loi === '1')
+            alert("Mã nhân viên này đã tồn tại!!!");
+
+
+        //bat loi khi them
+
+        $(".btn_them").on('click', function () {
+            var maNV = $('#NV_USERNAME').val();
+            var MatKhau = $('#NV_PASSWORD').val();
+            var TenNV = $('#NV_HOTEN').val();
+            var Sdt = $('#NV_SDT').val();
+            var Email = $('#NV_EMAIL').val();
+
+
+            if (maNV === '')
+            {
+                alert("Mã nhân viên không được rỗng!!");
+                return false;
+            }
+
+            if (maNV.length > 8)
+            {
+                alert("Mã nhân viên không được lớn hơn 8 ký tự!!");
+                return false;
+            }
+
+            if (TenNV === '') {
+                alert("Tên nhân viên không được rỗng!!");
+                return false;
+            }
+
+            if (TenNV.length > 50) {
+                alert("Tên nhân viên không được lớn hơn 50 ký tự!!");
+                return false;
+            }
+
+            if (Sdt === '') {
+                alert("Số điện thoại không được rỗng!!");
+                return false;
+            }
+
+            if (Sdt.length > 11) {
+                alert("Số điện thoại không được lớn hơn 11 ký tự!!");
+                return false;
+            }
+            if (MatKhau === '') {
+                alert("Mật khẩu không được rỗng!!");
+                return false;
+            }
+
+            if (MatKhau.length > 50) {
+                alert("Mật khẩu không được lớn hơn 50 ký tự!!");
+                return false;
+            }
+        });
+    </script>
+}

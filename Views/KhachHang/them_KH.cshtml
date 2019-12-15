@@ -1,0 +1,179 @@
+﻿@using NienLuan2.Models
+@model KHACH_HANG
+
+@{
+    Cty_CapNuocEntities db = new Cty_CapNuocEntities();
+    var listDT = db.DOI_TUONG.ToList();
+    var listHT = db.HINHTHUC_THANHTOAN.ToList();
+    var listLT = db.LO_TRINH.ToList();
+
+    string username = (Session["TaiKhoan"] as NHANVIEN).NV_USERNAME;
+    string name = (Session["TaiKhoan"] as NHANVIEN).NV_HOTEN;
+}
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="card mb-3">
+    <div class="col-xs-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Thêm khách hàng</h3>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("them_KH", "KhachHang", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                <table id="example2" class="table table-hover" border="0">
+                    <tr>
+                        <td><strong>Nhân viên nhập</strong></td>
+                        <td>
+                            @Html.Label(@name)
+                            @*@Html.HiddenFor(model => model.NV.USERNAME, new { @Value = @username })*@
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ngày nhập</strong></td>
+                        <td>
+                            @Html.Label(DateTime.Today.ToString("dd-MM-yyyy"))
+                            @Html.HiddenFor(model => model.TT_MA, new { @Value = "TT01" })
+                        </td>
+                    </tr>
+                    @*<tr>
+            <td><strong>Quận</strong></td>
+            <td>
+                @Html.DropDownListFor(model => model.KHU_VUC.PHUONGs, new SelectList(listDT, "KV_MA", "KV_TEN"))
+                @Html.ValidationMessageFor(model => model.KV_MA, "", new { @class = "text-danger" })
+            </td>
+        </tr>*@
+                    <tr>
+                        <td><strong>Đối tượng</strong></td>
+                        <td>
+                            @Html.DropDownListFor(model => model.DT_MA, new SelectList(listDT, "DT_MA", "DT_TEN"), "----- Chọn đối tượng ------", new { @required = "required", @style = "border:1px solid silver;background:white;", @class = "btn btn-default" })
+                            @Html.ValidationMessageFor(model => model.DT_MA, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Họ và tên khách hàng</strong></td>
+                        <td>
+                            @Html.TextBoxFor(model => model.KH_HOTEN, new { @placeholder = "  Họ và tên khách hàng ", @required = "required"} )
+                            @Html.ValidationMessageFor(model => model.KH_HOTEN, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Số điện thoại</strong></td>
+                        <td>
+                            @Html.TextBoxFor(model => model.KH_SDT, new { @placeholder = "  Số điện thoại ", @required = "required" })
+                            @Html.ValidationMessageFor(model => model.KH_SDT, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quận</strong></td>
+                        <td>
+                            @Html.DropDownList("QUAN_MA", ViewBag.qu as SelectList, "-- Chọn quận --", new { @required = "required", @style = "border:1px solid silver;background:white;", @class = "btn btn-default" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Phường</strong></td>
+                        <td>
+                            @Html.DropDownList("PHUONG_MA", new SelectList(""), "-- Chọn phường --", new { @required = "required",@style = "border:1px solid silver;background:white;", @class = "btn btn-default" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Khu vực</strong></td>
+                        <td>
+                            @Html.DropDownListFor(m => m.KV_MA, new SelectList(""), "-- Chọn khu vực --", new { @required = "required", @style = "border:1px solid silver;background:white;", @class = "btn btn-default" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Địa chỉ lắp đặt</strong></td>
+                        <td>
+                            @Html.TextAreaFor(model => model.KH_DIACHILAPDAT, new { @placeholder = "",  @class = "form-control", @required = "required" })
+                            @Html.ValidationMessageFor(model => model.KH_DIACHILAPDAT, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Địa chỉ thanh toán</strong></td>
+                        <td>
+                            @Html.TextAreaFor(model => model.KH_DIACHITHANHTOAN, new { @placeholder = "", @class = "form-control", @required = "required" })
+                            @Html.ValidationMessageFor(model => model.KH_DIACHITHANHTOAN, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lộ trình</strong></td>
+                        <td>
+                            @Html.DropDownListFor(model => model.LT_MA, new SelectList(listLT, "LT_MA", "LT_TEN"), "-------------------------- Chọn lộ trình -------------------------- ",new { @required = "required" , @style = "border:1px solid silver;background:white;", @class = "btn btn-default" })
+                            @Html.ValidationMessageFor(model => model.LT_MA, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hình thức thanh toán</strong></td>
+                        <td>
+                            @Html.DropDownListFor(model => model.HTTT_MA, new SelectList(listHT, "HTTT_MA", "HTTT_TEN"),"----- Chọn hình thức thanh toán -----", new { @required = "required", @style = "border:1px solid silver;background:white;", @class = "btn btn-default" })
+                            @Html.ValidationMessageFor(model => model.HTTT_MA, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Số tài khoản ngân hàng</strong></td>
+                        <td>
+                            @Html.TextBoxFor(model => model.KH_SOTK, new { @placeholder = " Số tài khoản ngân hàng "})
+                            @Html.ValidationMessageFor(model => model.KH_SOTK, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tên ngân hàng</strong></td>
+                        <td>
+                            @Html.TextBoxFor(model => model.KH_TENNGANHANG, new { @placeholder = " Tên ngân hàng " })
+                            @Html.ValidationMessageFor(model => model.KH_TENNGANHANG, "", new { @class = "text-danger" })
+                        </td>
+                    </tr>
+                    <tr style="text-align:center;border-bottom:none;">
+                        <td colspan="2">
+                            <input type="submit" id="Submit" value="Lưu khách hàng" class="btn btn-primary">
+                            @Html.ActionLink("Đóng", "ListKH", "KhachHang", null, new { @class = "btn btn-default pull-right" })
+                        </td>
+                    </tr>
+                </table>
+                }
+            </div>
+        </div>
+     </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#QUAN_MA").change(function () {
+
+            var quanID = $(this).val();
+
+            $.ajax({
+                type: "post",
+                url: "/KhachHang/GetPhuongList?QUAN_MA=" + quanID,
+                contentType: "html",
+                success: function (response) {
+                    console.log(response);
+                    $("#PHUONG_MA").empty();
+                    $("#PHUONG_MA").append(response);
+                }
+            })
+        })
+        $("#PHUONG_MA").change(function () {
+            var phuongID = $(this).val();
+
+            $.ajax({
+                type: "post",
+                url: "/KhachHang/GetKhuVucList?PHUONG_MA=" + phuongID,
+                contentType: "html",
+                success: function (response) {
+                    $("#KV_MA").empty();
+                    $("#KV_MA").append(response);
+                }
+            })
+        })
+    })
+            </script>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->
+
+

@@ -1,0 +1,143 @@
+﻿@model PagedList.IPagedList<NienLuan2.Models.KY_GHI>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                DANH SÁCH KỲ GHI
+            </div>
+            <div class="card-header">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#modal-mrole" style="margin-right:20px" ;>Thêm kỳ ghi</button>
+                <input type="hidden" class="TonTaiMa" value="@ViewBag.Loi" />
+                @using (Html.BeginForm("KyGhi", "QuanLyNuoc", FormMethod.Get, new { @class = "pull-right d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" }))
+            {
+                    <div class="input-group">
+                        <input type="text" name="searchString" value="@ViewBag.SearchString" class="form-control" placeholder="Nhập kỳ ghi cần tìm..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+                <div class="box-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable">
+                            <tr>
+
+                                <th style="text-align:center">
+                                    Mã kỳ ghi
+                                </th>
+                                <th style="text-align:center">
+                                    Tên kỳ ghi
+                                </th>
+                            </tr>
+
+
+                            @foreach (var item in Model)
+                            {
+
+                                <tr>
+
+                                    <td style="text-align:center">
+                                        @Html.DisplayFor(modelItem => item.KYGHI_MA)
+                                    </td>
+                                    <td style="text-align:center">
+                                        @Html.DisplayFor(modelItem => item.KYGHI_TEN)
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("QuanLyNuoc", new { page, @searchString = @ViewBag.SearchString }))
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-mrole">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm kỳ ghi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box box-primary">
+                    @using (Html.BeginForm("AddKG", "QuanLyNuoc", FormMethod.Post))
+                    {
+                        <div class="modal-body" style="height:350px">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mã kỳ ghi :</label>
+                                    <input type="text" class="form-control " id="KYGHI_MA" name="KYGHI_MA" placeholder="Mã kỳ ghi" maxlength="10" value="@DateTime.Today.ToString("yyyyMM")" readonly>
+
+                                    @*@Html.HiddenFor(model => model.KYGHI_MA, new { @Value = "TT01" })*@
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên kỳ ghi :</label>
+                                    <input type="text" class="form-control" id="KYGHI_TEN" name="KYGHI_TEN" placeholder="Tên kỳ ghi" value="Kỳ ghi @DateTime.Today.ToString("MM/yyyy")" readonly>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary btn_them">Thêm</button>
+                                <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+   
+    //bat loi trung ma
+    var loi = $(".TonTaiMa").val();
+    if (loi === '1')
+        alert("Chưa đến tháng mới để tạo kỳ ghi!!!");
+
+
+    //bat loi khi them
+
+    $(".btn_them").on('click', function () {
+
+        var KYGHI_MA = $('#KYGHI_MA').val();
+        var KYGHI_TEN = $('#KYGHI_TEN').val();;
+
+        if (KYGHI_MA === '') {
+            alert("Mã kỳ ghi không được rỗng!!");
+            return false;
+        }
+
+        if (maCV.length > 10) {
+            alert("Mã kỳ ghi không được lớn hơn 10 kí tự!!");
+            return false;
+        }
+    });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+
+
+

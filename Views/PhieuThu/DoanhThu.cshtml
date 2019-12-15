@@ -1,0 +1,71 @@
+﻿@using NienLuan2.Models
+@model IEnumerable<DoanhThuModels>
+@using Microsoft.Ajax.Utilities;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                THỐNG KÊ DOANH THU NHÂN VIÊN
+            </div>
+            <div class="card-header">
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+                &nbsp;&nbsp;&nbsp;&nbsp; @Html.DropDownList("KYGHI_MA", ViewBag.kyghi as SelectList, "Chọn kì ghi", new { @style = "border:1px solid silver; background: white;", @class = "btn btn-default", @required = "required" })
+                @Html.DropDownList("NV_USERNAME", ViewBag.nhanvien as SelectList, "Chọn nhân viên", new { @style = "border:1px solid silver; background: white;", @class = "btn btn-default", @required = "required" })
+                <input type="submit" id="thongke" class="btn btn-primary" value="Chọn" />
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table id="tblChiSoNuoc" class="table table-bordered table-hover">
+                            <tbody></tbody>
+                        </table>
+                        <span style="font-weight: bold; float: right">Tổng doanh thu: <strong id="demo"></strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#thongke').click(function () {
+            $("#tblChiSoNuoc tbody tr").remove();
+            $.ajax({
+                type: 'GET',
+                url: "/PhieuThu/GetDoanhThu",
+                dataType: 'json',
+                data: { id: $('#KYGHI_MA').val(), nhanvien: $('#NV_USERNAME').val() },
+                success: function (data) {
+                    var items = '';
+                    console.log(data);
+                    var rows = "<tr>"
+                        + "<th align='left' class='ChiSoNuocTableTH'>Mã khách hàng</th><th align='left' class='ChiSoNuocTableTH'>Lộ trình</th><th align='left' class='ChiSoNuocTableTH'>Đối tượng</th><th align='left' class='ChiSoNuocTableTH'>Tiêu thụ</th><th align='left' class='ChiSoNuocTableTH'>Giá tiền</th><th align='left' class='ChiSoNuocTableTH'>Thành tiền</th>"
+                        + "</tr>";
+                    $('#tblChiSoNuoc tbody').append(rows);
+
+                    $.each(data, function (i, item) {
+                        var rows = "<tr>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.KH_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.LT_MA + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.DT_TEN + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.CSN_TIEUTHU + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.GIATIEN + "</td>"
+                            + "<td class='ChiSoNuocTableTD'>" + item.THANHTIEN + "</td>"
+                            + "</tr>";
+                        $('#tblChiSoNuoc tbody').append(rows);
+                        document.getElementById("demo").innerHTML = item.TONG_TIEN.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") + " VNĐ";
+                    });
+                },
+                error: function (ex) {
+
+                }
+            });
+            return false;
+        });
+    });
+
+
+</script>
+
+

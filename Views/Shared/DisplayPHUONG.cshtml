@@ -1,0 +1,11 @@
+﻿@model NienLuan2.Models.PHUONG
+
+<option value="">-- Chọn Phường --</option>
+
+@if (ViewBag.phuong_list != null)
+{
+    foreach (var item in ViewBag.phuong_list)
+    {
+        <option value="@item.Value">@item.Text</option>
+    }
+}

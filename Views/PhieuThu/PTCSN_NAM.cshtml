@@ -1,0 +1,80 @@
+﻿@using NienLuan2.Models
+@model IEnumerable<ChiSoNuocModels>
+@using Microsoft.Ajax.Utilities;
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+<title>Công ty cấp nước Cần Thơ</title>
+<div class="container-fluid">
+    <div class="card mb-3">
+        <div class="box">
+            <div class="card-header">
+                <i class="fas fa-table"></i>
+                THỐNG KÊ TỔNG HỢP THEO NĂM
+            </div>
+            <div class="card-header">
+                <input type="hidden" class="LoiKhoaNgoai" value="@ViewBag.Loi" />
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover" id="dataTable">
+                            @foreach (var nam in Model.GroupBy(x => x.KYGHI_MA.Substring(0, 4)))
+                            {
+                                <tr class="group-header" data-toggle="collapse">
+                                    <td colspan="6">
+                                        <i class="far fa-plus-square">
+                                            <span class="h4">&nbsp;&nbsp;Năm: @nam.Key (Tổng tiêu thụ: @nam.Sum(x => x.CSN_TIEUTHU).ToString() - Doanh thu: @Convert.ToDecimal(@nam.Sum(x => x.THANH_TIEN)).ToString("N0") VNĐ)</span>
+                                        </i>
+                                    </td>
+                                </tr>
+                                foreach (var kg in Model.GroupBy(x => x.KYGHI_MA.Substring(4, 2)))
+                                {
+                                    <tr class="panel-collapse collapse">
+                                        <td colspan="6">
+                                            <h5 style="text-align:center">Kỳ ghi tháng: @kg.Key (Tổng tiêu thụ: @kg.Sum(x => x.CSN_TIEUTHU).ToString() - Doanh thu: @Convert.ToDecimal(@kg.Sum(x => x.THANH_TIEN)).ToString("N0") VNĐ) </h5>
+                                        </td>
+                                    </tr>
+                                    <tr class="panel-collapse collapse">
+                                        <th>
+                                            Mã lộ trình
+                                        </th>
+                                        <th>
+                                            Tổng tiêu thụ
+                                        </th>
+                                        <th>
+                                            Tổng tiền
+                                        </th>
+                                    </tr>
+                                    foreach (var lt in kg.GroupBy(x => x.LT_MA))
+                                    {
+                                        <tr class="panel-collapse collapse">
+                                            <td>@lt.Key</td>
+                                            <td>@lt.Sum(x => x.CSN_TIEUTHU).ToString()</td>
+                                            <td>@Convert.ToDecimal(@lt.Sum(x => x.THANH_TIEN)).ToString("N0")</td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                        </table>
+                        @*@Html.PagedListPager(Model, page => Url.Action("ChiSoNuoc", new { page, @searchString = @ViewBag.SearchString }))*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.group-header').click(function () {
+            $(this).nextUntil('.group-header').toggle();
+        });
+    });
+
+    function addPaging() {
+        $('#employeeGrid tr:first').prepend('<th style="width:60px;">S. No.</th>');
+        $('#employeeGrid tr:not(:first, .group-header, .group-footer)').each(function (index) {
+            $(this).prepend('<td class="text-right">' + (index + 1) + '.</td>');
+        });
+    }
+    function format_curency(a) {
+        a.value = a.value.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
+    }
+</script>

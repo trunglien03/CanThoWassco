@@ -1,0 +1,12 @@
+﻿
+@{
+    Layout = null;
+}
+@model NienLuan2.Models.ChiSoNuoc_KH_Models
+<script src="~/Content/javascript/sript_map.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBut76aU8KK1puDk_6VhcDdwMb6chJMnAs&libraries=places&language=vi&region=VI&callback=initMap"
+        async defer></script>
+<input type="text" placeholder="Search Box" id="address" value="@Model.KH_DIACHILAPDAT" hidden>
+<div id="map" onload="initMap()" style="height:100%;width:100%"></div>
+<div style="position:absolute; top:20px; right:90px; z-index:9999; display:block; background-color:white;font-size:20px;border:2px solid whitesmoke; padding:6.5px; "><strong>Chỉ đường đến khách hàng:</strong>  @Model.KH_HOTEN</div>
+

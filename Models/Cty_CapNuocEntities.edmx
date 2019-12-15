@@ -1,0 +1,1194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Cty_CapNuocModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CHI_SO_NUOC">
+          <Key>
+            <PropertyRef Name="KH_MA" />
+            <PropertyRef Name="KYGHI_MA" />
+            <PropertyRef Name="CSN_MA" />
+          </Key>
+          <Property Name="KH_MA" Type="int" Nullable="false" />
+          <Property Name="KYGHI_MA" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="CSN_MA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CSN_MOI" Type="float" />
+          <Property Name="CSN_CU" Type="float" />
+          <Property Name="CSN_TIEUTHU" Type="float" />
+          <Property Name="CSN_TIEUTHU1" Type="float" />
+          <Property Name="CSN_TIEUTHU2" Type="float" />
+          <Property Name="TTPT_MA" Type="char" MaxLength="6" />
+          <Property Name="THANH_TIEN" Type="float" />
+        </EntityType>
+        <EntityType Name="CHUCVU">
+          <Key>
+            <PropertyRef Name="CV_MA" />
+          </Key>
+          <Property Name="CV_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="CV_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="DOI_TUONG">
+          <Key>
+            <PropertyRef Name="DT_MA" />
+          </Key>
+          <Property Name="DT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="DG_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="DT_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="DONGIA">
+          <Key>
+            <PropertyRef Name="DG_MA" />
+          </Key>
+          <Property Name="DG_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="GIATIEN" Type="float" />
+        </EntityType>
+        <EntityType Name="HINHTHUC_THANHTOAN">
+          <Key>
+            <PropertyRef Name="HTTT_MA" />
+          </Key>
+          <Property Name="HTTT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="HTTT_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="KHACH_HANG">
+          <Key>
+            <PropertyRef Name="KH_MA" />
+          </Key>
+          <Property Name="KH_MA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="HTTT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="TT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="DT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="KV_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="KH_HOTEN" Type="nvarchar" MaxLength="40" />
+          <Property Name="KH_DIACHILAPDAT" Type="nvarchar" MaxLength="256" />
+          <Property Name="KH_DIACHITHANHTOAN" Type="nvarchar" MaxLength="256" />
+          <Property Name="KH_SDT" Type="nvarchar" MaxLength="256" />
+          <Property Name="KH_SOTK" Type="nvarchar" MaxLength="1024" />
+          <Property Name="KH_TENNGANHANG" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="KHU_VUC">
+          <Key>
+            <PropertyRef Name="KV_MA" />
+          </Key>
+          <Property Name="KV_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="PHUONG_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="KV_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="KY_GHI">
+          <Key>
+            <PropertyRef Name="KYGHI_MA" />
+          </Key>
+          <Property Name="KYGHI_MA" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="KYGHI_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="LO_TRINH">
+          <Key>
+            <PropertyRef Name="LT_MA" />
+          </Key>
+          <Property Name="LT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="NV_USERNAME" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="LT_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="MAIN_MENU">
+          <Key>
+            <PropertyRef Name="MAIN_ID" />
+          </Key>
+          <Property Name="MAIN_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAIN_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="MAIN_ICON" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="NV_USERNAME" />
+          </Key>
+          <Property Name="NV_USERNAME" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="VT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="CV_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="PB_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="NV_PASSWORD" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="NV_HOTEN" Type="nvarchar" MaxLength="50" />
+          <Property Name="NV_SDT" Type="char" MaxLength="15" />
+          <Property Name="NV_EMAIL" Type="nvarchar" MaxLength="50" />
+          <Property Name="NV_AVATAR" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="PHONGBAN">
+          <Key>
+            <PropertyRef Name="PB_MA" />
+          </Key>
+          <Property Name="PB_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="PB_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="PHUONG">
+          <Key>
+            <PropertyRef Name="PHUONG_MA" />
+          </Key>
+          <Property Name="PHUONG_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="QUAN_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="PHUONG_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="QUAN">
+          <Key>
+            <PropertyRef Name="QUAN_MA" />
+          </Key>
+          <Property Name="QUAN_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="QUAN_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="SUB_MENU">
+          <Key>
+            <PropertyRef Name="SUB_ID" />
+          </Key>
+          <Property Name="SUB_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VT_MA" Type="nvarchar" MaxLength="6" />
+          <Property Name="MAIN_ID" Type="int" />
+          <Property Name="SUB_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="SUB_CONTROLLER" Type="nvarchar" MaxLength="100" />
+          <Property Name="SUB_ACTION" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TRANG_THAI">
+          <Key>
+            <PropertyRef Name="TT_MA" />
+          </Key>
+          <Property Name="TT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="TT_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="TRANG_THAI_PT">
+          <Key>
+            <PropertyRef Name="TTPT_MA" />
+          </Key>
+          <Property Name="TTPT_MA" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="TTPT_TEN" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="VAITRO">
+          <Key>
+            <PropertyRef Name="VT_MA" />
+          </Key>
+          <Property Name="VT_MA" Type="nvarchar" MaxLength="6" Nullable="false" />
+          <Property Name="VT_TEN" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CHI_SO_N_CSN_KH_KHACH_HA">
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="1" />
+          <End Role="CHI_SO_NUOC" Type="Self.CHI_SO_NUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH_HANG">
+              <PropertyRef Name="KH_MA" />
+            </Principal>
+            <Dependent Role="CHI_SO_NUOC">
+              <PropertyRef Name="KH_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHI_SO_N_KG_CSN_KY_GHI">
+          <End Role="KY_GHI" Type="Self.KY_GHI" Multiplicity="1" />
+          <End Role="CHI_SO_NUOC" Type="Self.CHI_SO_NUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KY_GHI">
+              <PropertyRef Name="KYGHI_MA" />
+            </Principal>
+            <Dependent Role="CHI_SO_NUOC">
+              <PropertyRef Name="KYGHI_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOI_TUON_DT_GIA_DONGIA">
+          <End Role="DONGIA" Type="Self.DONGIA" Multiplicity="1" />
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGIA">
+              <PropertyRef Name="DG_MA" />
+            </Principal>
+            <Dependent Role="DOI_TUONG">
+              <PropertyRef Name="DG_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_DT_DOI_TUON">
+          <End Role="DOI_TUONG" Type="Self.DOI_TUONG" Multiplicity="1" />
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="DT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="DT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_HTTT_HINHTHUC">
+          <End Role="HINHTHUC_THANHTOAN" Type="Self.HINHTHUC_THANHTOAN" Multiplicity="1" />
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HINHTHUC_THANHTOAN">
+              <PropertyRef Name="HTTT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="HTTT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_KV_KHU_VUC">
+          <End Role="KHU_VUC" Type="Self.KHU_VUC" Multiplicity="1" />
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHU_VUC">
+              <PropertyRef Name="KV_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="KV_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_TT_TRANG_TH">
+          <End Role="TRANG_THAI" Type="Self.TRANG_THAI" Multiplicity="1" />
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANG_THAI">
+              <PropertyRef Name="TT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="TT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_LT_KH_LO_TRINH">
+          <End Role="LO_TRINH" Type="Self.LO_TRINH" Multiplicity="1" />
+          <End Role="KHACH_HANG" Type="Self.KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LO_TRINH">
+              <PropertyRef Name="LT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="LT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHU_VUC_KV_PHUONG_PHUONG">
+          <End Role="PHUONG" Type="Self.PHUONG" Multiplicity="1" />
+          <End Role="KHU_VUC" Type="Self.KHU_VUC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHUONG">
+              <PropertyRef Name="PHUONG_MA" />
+            </Principal>
+            <Dependent Role="KHU_VUC">
+              <PropertyRef Name="PHUONG_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LO_TRINH_NV_LT_NHANVIEN">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="1" />
+          <End Role="LO_TRINH" Type="Self.LO_TRINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="NV_USERNAME" />
+            </Principal>
+            <Dependent Role="LO_TRINH">
+              <PropertyRef Name="NV_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_CV_NV_CHUCVU">
+          <End Role="CHUCVU" Type="Self.CHUCVU" Multiplicity="1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUCVU">
+              <PropertyRef Name="CV_MA" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="CV_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_ND_VT_VAITRO">
+          <End Role="VAITRO" Type="Self.VAITRO" Multiplicity="1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAITRO">
+              <PropertyRef Name="VT_MA" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="VT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_PB_NV_PHONGBAN">
+          <End Role="PHONGBAN" Type="Self.PHONGBAN" Multiplicity="1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGBAN">
+              <PropertyRef Name="PB_MA" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="PB_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHUONG_PHUONG_QU_QUAN">
+          <End Role="QUAN" Type="Self.QUAN" Multiplicity="1" />
+          <End Role="PHUONG" Type="Self.PHUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUAN">
+              <PropertyRef Name="QUAN_MA" />
+            </Principal>
+            <Dependent Role="PHUONG">
+              <PropertyRef Name="QUAN_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCN_TH_PT_TT_TRANG_TH">
+          <End Role="TRANG_THAI_PT" Type="Self.TRANG_THAI_PT" Multiplicity="0..1" />
+          <End Role="CHI_SO_NUOC" Type="Self.CHI_SO_NUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANG_THAI_PT">
+              <PropertyRef Name="TTPT_MA" />
+            </Principal>
+            <Dependent Role="CHI_SO_NUOC">
+              <PropertyRef Name="TTPT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUB_MENU_MAIN_SUB_MAIN_MEN">
+          <End Role="MAIN_MENU" Type="Self.MAIN_MENU" Multiplicity="0..1" />
+          <End Role="SUB_MENU" Type="Self.SUB_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAIN_MENU">
+              <PropertyRef Name="MAIN_ID" />
+            </Principal>
+            <Dependent Role="SUB_MENU">
+              <PropertyRef Name="MAIN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUB_MENU_VT_SUB_VAITRO">
+          <End Role="VAITRO" Type="Self.VAITRO" Multiplicity="0..1" />
+          <End Role="SUB_MENU" Type="Self.SUB_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAITRO">
+              <PropertyRef Name="VT_MA" />
+            </Principal>
+            <Dependent Role="SUB_MENU">
+              <PropertyRef Name="VT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Cty_CapNuocModelStoreContainer">
+          <EntitySet Name="CHI_SO_NUOC" EntityType="Self.CHI_SO_NUOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CHUCVU" EntityType="Self.CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOI_TUONG" EntityType="Self.DOI_TUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DONGIA" EntityType="Self.DONGIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HINHTHUC_THANHTOAN" EntityType="Self.HINHTHUC_THANHTOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHACH_HANG" EntityType="Self.KHACH_HANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHU_VUC" EntityType="Self.KHU_VUC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KY_GHI" EntityType="Self.KY_GHI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LO_TRINH" EntityType="Self.LO_TRINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MAIN_MENU" EntityType="Self.MAIN_MENU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHONGBAN" EntityType="Self.PHONGBAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHUONG" EntityType="Self.PHUONG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUAN" EntityType="Self.QUAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUB_MENU" EntityType="Self.SUB_MENU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANG_THAI" EntityType="Self.TRANG_THAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TRANG_THAI_PT" EntityType="Self.TRANG_THAI_PT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VAITRO" EntityType="Self.VAITRO" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CHI_SO_N_CSN_KH_KHACH_HA" Association="Self.FK_CHI_SO_N_CSN_KH_KHACH_HA">
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+            <End Role="CHI_SO_NUOC" EntitySet="CHI_SO_NUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHI_SO_N_KG_CSN_KY_GHI" Association="Self.FK_CHI_SO_N_KG_CSN_KY_GHI">
+            <End Role="KY_GHI" EntitySet="KY_GHI" />
+            <End Role="CHI_SO_NUOC" EntitySet="CHI_SO_NUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOI_TUON_DT_GIA_DONGIA" Association="Self.FK_DOI_TUON_DT_GIA_DONGIA">
+            <End Role="DONGIA" EntitySet="DONGIA" />
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_DT_DOI_TUON" Association="Self.FK_KHACH_HA_KH_DT_DOI_TUON">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_HTTT_HINHTHUC" Association="Self.FK_KHACH_HA_KH_HTTT_HINHTHUC">
+            <End Role="HINHTHUC_THANHTOAN" EntitySet="HINHTHUC_THANHTOAN" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_KV_KHU_VUC" Association="Self.FK_KHACH_HA_KH_KV_KHU_VUC">
+            <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_TT_TRANG_TH" Association="Self.FK_KHACH_HA_KH_TT_TRANG_TH">
+            <End Role="TRANG_THAI" EntitySet="TRANG_THAI" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_LT_KH_LO_TRINH" Association="Self.FK_KHACH_HA_LT_KH_LO_TRINH">
+            <End Role="LO_TRINH" EntitySet="LO_TRINH" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHU_VUC_KV_PHUONG_PHUONG" Association="Self.FK_KHU_VUC_KV_PHUONG_PHUONG">
+            <End Role="PHUONG" EntitySet="PHUONG" />
+            <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LO_TRINH_NV_LT_NHANVIEN" Association="Self.FK_LO_TRINH_NV_LT_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="LO_TRINH" EntitySet="LO_TRINH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_CV_NV_CHUCVU" Association="Self.FK_NHANVIEN_CV_NV_CHUCVU">
+            <End Role="CHUCVU" EntitySet="CHUCVU" />
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_ND_VT_VAITRO" Association="Self.FK_NHANVIEN_ND_VT_VAITRO">
+            <End Role="VAITRO" EntitySet="VAITRO" />
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_PB_NV_PHONGBAN" Association="Self.FK_NHANVIEN_PB_NV_PHONGBAN">
+            <End Role="PHONGBAN" EntitySet="PHONGBAN" />
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHUONG_PHUONG_QU_QUAN" Association="Self.FK_PHUONG_PHUONG_QU_QUAN">
+            <End Role="QUAN" EntitySet="QUAN" />
+            <End Role="PHUONG" EntitySet="PHUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCN_TH_PT_TT_TRANG_TH" Association="Self.FK_SCN_TH_PT_TT_TRANG_TH">
+            <End Role="TRANG_THAI_PT" EntitySet="TRANG_THAI_PT" />
+            <End Role="CHI_SO_NUOC" EntitySet="CHI_SO_NUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUB_MENU_MAIN_SUB_MAIN_MEN" Association="Self.FK_SUB_MENU_MAIN_SUB_MAIN_MEN">
+            <End Role="MAIN_MENU" EntitySet="MAIN_MENU" />
+            <End Role="SUB_MENU" EntitySet="SUB_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUB_MENU_VT_SUB_VAITRO" Association="Self.FK_SUB_MENU_VT_SUB_VAITRO">
+            <End Role="VAITRO" EntitySet="VAITRO" />
+            <End Role="SUB_MENU" EntitySet="SUB_MENU" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Cty_CapNuocModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Cty_CapNuocEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CHI_SO_NUOC" EntityType="Cty_CapNuocModel.CHI_SO_NUOC" />
+          <EntitySet Name="CHUCVUs" EntityType="Cty_CapNuocModel.CHUCVU" />
+          <EntitySet Name="DOI_TUONG" EntityType="Cty_CapNuocModel.DOI_TUONG" />
+          <EntitySet Name="DONGIAs" EntityType="Cty_CapNuocModel.DONGIA" />
+          <EntitySet Name="HINHTHUC_THANHTOAN" EntityType="Cty_CapNuocModel.HINHTHUC_THANHTOAN" />
+          <EntitySet Name="KHACH_HANG" EntityType="Cty_CapNuocModel.KHACH_HANG" />
+          <EntitySet Name="KHU_VUC" EntityType="Cty_CapNuocModel.KHU_VUC" />
+          <EntitySet Name="KY_GHI" EntityType="Cty_CapNuocModel.KY_GHI" />
+          <EntitySet Name="LO_TRINH" EntityType="Cty_CapNuocModel.LO_TRINH" />
+          <EntitySet Name="MAIN_MENU" EntityType="Cty_CapNuocModel.MAIN_MENU" />
+          <EntitySet Name="NHANVIENs" EntityType="Cty_CapNuocModel.NHANVIEN" />
+          <EntitySet Name="PHONGBANs" EntityType="Cty_CapNuocModel.PHONGBAN" />
+          <EntitySet Name="PHUONGs" EntityType="Cty_CapNuocModel.PHUONG" />
+          <EntitySet Name="QUANs" EntityType="Cty_CapNuocModel.QUAN" />
+          <EntitySet Name="SUB_MENU" EntityType="Cty_CapNuocModel.SUB_MENU" />
+          <EntitySet Name="sysdiagrams" EntityType="Cty_CapNuocModel.sysdiagram" />
+          <EntitySet Name="TRANG_THAI" EntityType="Cty_CapNuocModel.TRANG_THAI" />
+          <EntitySet Name="TRANG_THAI_PT" EntityType="Cty_CapNuocModel.TRANG_THAI_PT" />
+          <EntitySet Name="VAITROes" EntityType="Cty_CapNuocModel.VAITRO" />
+          <AssociationSet Name="FK_CHI_SO_N_CSN_KH_KHACH_HA" Association="Cty_CapNuocModel.FK_CHI_SO_N_CSN_KH_KHACH_HA">
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+            <End Role="CHI_SO_NUOC" EntitySet="CHI_SO_NUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CHI_SO_N_KG_CSN_KY_GHI" Association="Cty_CapNuocModel.FK_CHI_SO_N_KG_CSN_KY_GHI">
+            <End Role="KY_GHI" EntitySet="KY_GHI" />
+            <End Role="CHI_SO_NUOC" EntitySet="CHI_SO_NUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SCN_TH_PT_TT_TRANG_TH" Association="Cty_CapNuocModel.FK_SCN_TH_PT_TT_TRANG_TH">
+            <End Role="TRANG_THAI_PT" EntitySet="TRANG_THAI_PT" />
+            <End Role="CHI_SO_NUOC" EntitySet="CHI_SO_NUOC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_CV_NV_CHUCVU" Association="Cty_CapNuocModel.FK_NHANVIEN_CV_NV_CHUCVU">
+            <End Role="CHUCVU" EntitySet="CHUCVUs" />
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DOI_TUON_DT_GIA_DONGIA" Association="Cty_CapNuocModel.FK_DOI_TUON_DT_GIA_DONGIA">
+            <End Role="DONGIA" EntitySet="DONGIAs" />
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_DT_DOI_TUON" Association="Cty_CapNuocModel.FK_KHACH_HA_KH_DT_DOI_TUON">
+            <End Role="DOI_TUONG" EntitySet="DOI_TUONG" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_HTTT_HINHTHUC" Association="Cty_CapNuocModel.FK_KHACH_HA_KH_HTTT_HINHTHUC">
+            <End Role="HINHTHUC_THANHTOAN" EntitySet="HINHTHUC_THANHTOAN" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_KV_KHU_VUC" Association="Cty_CapNuocModel.FK_KHACH_HA_KH_KV_KHU_VUC">
+            <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_KH_TT_TRANG_TH" Association="Cty_CapNuocModel.FK_KHACH_HA_KH_TT_TRANG_TH">
+            <End Role="TRANG_THAI" EntitySet="TRANG_THAI" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHACH_HA_LT_KH_LO_TRINH" Association="Cty_CapNuocModel.FK_KHACH_HA_LT_KH_LO_TRINH">
+            <End Role="LO_TRINH" EntitySet="LO_TRINH" />
+            <End Role="KHACH_HANG" EntitySet="KHACH_HANG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_KHU_VUC_KV_PHUONG_PHUONG" Association="Cty_CapNuocModel.FK_KHU_VUC_KV_PHUONG_PHUONG">
+            <End Role="PHUONG" EntitySet="PHUONGs" />
+            <End Role="KHU_VUC" EntitySet="KHU_VUC" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LO_TRINH_NV_LT_NHANVIEN" Association="Cty_CapNuocModel.FK_LO_TRINH_NV_LT_NHANVIEN">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="LO_TRINH" EntitySet="LO_TRINH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUB_MENU_MAIN_SUB_MAIN_MEN" Association="Cty_CapNuocModel.FK_SUB_MENU_MAIN_SUB_MAIN_MEN">
+            <End Role="MAIN_MENU" EntitySet="MAIN_MENU" />
+            <End Role="SUB_MENU" EntitySet="SUB_MENU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_ND_VT_VAITRO" Association="Cty_CapNuocModel.FK_NHANVIEN_ND_VT_VAITRO">
+            <End Role="VAITRO" EntitySet="VAITROes" />
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_PB_NV_PHONGBAN" Association="Cty_CapNuocModel.FK_NHANVIEN_PB_NV_PHONGBAN">
+            <End Role="PHONGBAN" EntitySet="PHONGBANs" />
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PHUONG_PHUONG_QU_QUAN" Association="Cty_CapNuocModel.FK_PHUONG_PHUONG_QU_QUAN">
+            <End Role="QUAN" EntitySet="QUANs" />
+            <End Role="PHUONG" EntitySet="PHUONGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SUB_MENU_VT_SUB_VAITRO" Association="Cty_CapNuocModel.FK_SUB_MENU_VT_SUB_VAITRO">
+            <End Role="VAITRO" EntitySet="VAITROes" />
+            <End Role="SUB_MENU" EntitySet="SUB_MENU" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="CHI_SO_NUOC">
+          <Key>
+            <PropertyRef Name="KH_MA" />
+            <PropertyRef Name="KYGHI_MA" />
+            <PropertyRef Name="CSN_MA" />
+          </Key>
+          <Property Name="KH_MA" Type="Int32" Nullable="false" />
+          <Property Name="KYGHI_MA" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CSN_MA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CSN_MOI" Type="Double" />
+          <Property Name="CSN_CU" Type="Double" />
+          <Property Name="CSN_TIEUTHU" Type="Double" />
+          <Property Name="CSN_TIEUTHU1" Type="Double" />
+          <Property Name="CSN_TIEUTHU2" Type="Double" />
+          <Property Name="TTPT_MA" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="THANH_TIEN" Type="Double" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Cty_CapNuocModel.FK_CHI_SO_N_CSN_KH_KHACH_HA" FromRole="CHI_SO_NUOC" ToRole="KHACH_HANG" />
+          <NavigationProperty Name="KY_GHI" Relationship="Cty_CapNuocModel.FK_CHI_SO_N_KG_CSN_KY_GHI" FromRole="CHI_SO_NUOC" ToRole="KY_GHI" />
+          <NavigationProperty Name="TRANG_THAI_PT" Relationship="Cty_CapNuocModel.FK_SCN_TH_PT_TT_TRANG_TH" FromRole="CHI_SO_NUOC" ToRole="TRANG_THAI_PT" />
+        </EntityType>
+        <EntityType Name="CHUCVU">
+          <Key>
+            <PropertyRef Name="CV_MA" />
+          </Key>
+          <Property Name="CV_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="CV_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIENs" Relationship="Cty_CapNuocModel.FK_NHANVIEN_CV_NV_CHUCVU" FromRole="CHUCVU" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="DOI_TUONG">
+          <Key>
+            <PropertyRef Name="DT_MA" />
+          </Key>
+          <Property Name="DT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="DG_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="DT_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DONGIA" Relationship="Cty_CapNuocModel.FK_DOI_TUON_DT_GIA_DONGIA" FromRole="DOI_TUONG" ToRole="DONGIA" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_DT_DOI_TUON" FromRole="DOI_TUONG" ToRole="KHACH_HANG" />
+        </EntityType>
+        <EntityType Name="DONGIA">
+          <Key>
+            <PropertyRef Name="DG_MA" />
+          </Key>
+          <Property Name="DG_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="GIATIEN" Type="Double" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Cty_CapNuocModel.FK_DOI_TUON_DT_GIA_DONGIA" FromRole="DONGIA" ToRole="DOI_TUONG" />
+        </EntityType>
+        <EntityType Name="HINHTHUC_THANHTOAN">
+          <Key>
+            <PropertyRef Name="HTTT_MA" />
+          </Key>
+          <Property Name="HTTT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="HTTT_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_HTTT_HINHTHUC" FromRole="HINHTHUC_THANHTOAN" ToRole="KHACH_HANG" />
+        </EntityType>
+        <EntityType Name="KHACH_HANG">
+          <Key>
+            <PropertyRef Name="KH_MA" />
+          </Key>
+          <Property Name="KH_MA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="HTTT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="TT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="DT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="KV_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="KH_HOTEN" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="KH_DIACHILAPDAT" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="KH_DIACHITHANHTOAN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="KH_SDT" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="KH_SOTK" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="KH_TENNGANHANG" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHI_SO_NUOC" Relationship="Cty_CapNuocModel.FK_CHI_SO_N_CSN_KH_KHACH_HA" FromRole="KHACH_HANG" ToRole="CHI_SO_NUOC" />
+          <NavigationProperty Name="DOI_TUONG" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_DT_DOI_TUON" FromRole="KHACH_HANG" ToRole="DOI_TUONG" />
+          <NavigationProperty Name="HINHTHUC_THANHTOAN" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_HTTT_HINHTHUC" FromRole="KHACH_HANG" ToRole="HINHTHUC_THANHTOAN" />
+          <NavigationProperty Name="KHU_VUC" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_KV_KHU_VUC" FromRole="KHACH_HANG" ToRole="KHU_VUC" />
+          <NavigationProperty Name="TRANG_THAI" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_TT_TRANG_TH" FromRole="KHACH_HANG" ToRole="TRANG_THAI" />
+          <NavigationProperty Name="LO_TRINH" Relationship="Cty_CapNuocModel.FK_KHACH_HA_LT_KH_LO_TRINH" FromRole="KHACH_HANG" ToRole="LO_TRINH" />
+        </EntityType>
+        <EntityType Name="KHU_VUC">
+          <Key>
+            <PropertyRef Name="KV_MA" />
+          </Key>
+          <Property Name="KV_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="PHUONG_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="KV_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_KV_KHU_VUC" FromRole="KHU_VUC" ToRole="KHACH_HANG" />
+          <NavigationProperty Name="PHUONG" Relationship="Cty_CapNuocModel.FK_KHU_VUC_KV_PHUONG_PHUONG" FromRole="KHU_VUC" ToRole="PHUONG" />
+        </EntityType>
+        <EntityType Name="KY_GHI">
+          <Key>
+            <PropertyRef Name="KYGHI_MA" />
+          </Key>
+          <Property Name="KYGHI_MA" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="KYGHI_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHI_SO_NUOC" Relationship="Cty_CapNuocModel.FK_CHI_SO_N_KG_CSN_KY_GHI" FromRole="KY_GHI" ToRole="CHI_SO_NUOC" />
+        </EntityType>
+        <EntityType Name="LO_TRINH">
+          <Key>
+            <PropertyRef Name="LT_MA" />
+          </Key>
+          <Property Name="LT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="NV_USERNAME" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="LT_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Cty_CapNuocModel.FK_KHACH_HA_LT_KH_LO_TRINH" FromRole="LO_TRINH" ToRole="KHACH_HANG" />
+          <NavigationProperty Name="NHANVIEN" Relationship="Cty_CapNuocModel.FK_LO_TRINH_NV_LT_NHANVIEN" FromRole="LO_TRINH" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="MAIN_MENU">
+          <Key>
+            <PropertyRef Name="MAIN_ID" />
+          </Key>
+          <Property Name="MAIN_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAIN_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MAIN_ICON" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SUB_MENU" Relationship="Cty_CapNuocModel.FK_SUB_MENU_MAIN_SUB_MAIN_MEN" FromRole="MAIN_MENU" ToRole="SUB_MENU" />
+        </EntityType>
+        <EntityType Name="NHANVIEN">
+          <Key>
+            <PropertyRef Name="NV_USERNAME" />
+          </Key>
+          <Property Name="NV_USERNAME" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="VT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="CV_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="PB_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="NV_PASSWORD" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="NV_HOTEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NV_SDT" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="NV_EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NV_AVATAR" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHUCVU" Relationship="Cty_CapNuocModel.FK_NHANVIEN_CV_NV_CHUCVU" FromRole="NHANVIEN" ToRole="CHUCVU" />
+          <NavigationProperty Name="LO_TRINH" Relationship="Cty_CapNuocModel.FK_LO_TRINH_NV_LT_NHANVIEN" FromRole="NHANVIEN" ToRole="LO_TRINH" />
+          <NavigationProperty Name="VAITRO" Relationship="Cty_CapNuocModel.FK_NHANVIEN_ND_VT_VAITRO" FromRole="NHANVIEN" ToRole="VAITRO" />
+          <NavigationProperty Name="PHONGBAN" Relationship="Cty_CapNuocModel.FK_NHANVIEN_PB_NV_PHONGBAN" FromRole="NHANVIEN" ToRole="PHONGBAN" />
+        </EntityType>
+        <EntityType Name="PHONGBAN">
+          <Key>
+            <PropertyRef Name="PB_MA" />
+          </Key>
+          <Property Name="PB_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="PB_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIENs" Relationship="Cty_CapNuocModel.FK_NHANVIEN_PB_NV_PHONGBAN" FromRole="PHONGBAN" ToRole="NHANVIEN" />
+        </EntityType>
+        <EntityType Name="PHUONG">
+          <Key>
+            <PropertyRef Name="PHUONG_MA" />
+          </Key>
+          <Property Name="PHUONG_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="QUAN_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="PHUONG_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHU_VUC" Relationship="Cty_CapNuocModel.FK_KHU_VUC_KV_PHUONG_PHUONG" FromRole="PHUONG" ToRole="KHU_VUC" />
+          <NavigationProperty Name="QUAN" Relationship="Cty_CapNuocModel.FK_PHUONG_PHUONG_QU_QUAN" FromRole="PHUONG" ToRole="QUAN" />
+        </EntityType>
+        <EntityType Name="QUAN">
+          <Key>
+            <PropertyRef Name="QUAN_MA" />
+          </Key>
+          <Property Name="QUAN_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="QUAN_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PHUONGs" Relationship="Cty_CapNuocModel.FK_PHUONG_PHUONG_QU_QUAN" FromRole="QUAN" ToRole="PHUONG" />
+        </EntityType>
+        <EntityType Name="SUB_MENU">
+          <Key>
+            <PropertyRef Name="SUB_ID" />
+          </Key>
+          <Property Name="SUB_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VT_MA" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="MAIN_ID" Type="Int32" />
+          <Property Name="SUB_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SUB_CONTROLLER" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SUB_ACTION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MAIN_MENU" Relationship="Cty_CapNuocModel.FK_SUB_MENU_MAIN_SUB_MAIN_MEN" FromRole="SUB_MENU" ToRole="MAIN_MENU" />
+          <NavigationProperty Name="VAITRO" Relationship="Cty_CapNuocModel.FK_SUB_MENU_VT_SUB_VAITRO" FromRole="SUB_MENU" ToRole="VAITRO" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TRANG_THAI">
+          <Key>
+            <PropertyRef Name="TT_MA" />
+          </Key>
+          <Property Name="TT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="TT_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KHACH_HANG" Relationship="Cty_CapNuocModel.FK_KHACH_HA_KH_TT_TRANG_TH" FromRole="TRANG_THAI" ToRole="KHACH_HANG" />
+        </EntityType>
+        <EntityType Name="TRANG_THAI_PT">
+          <Key>
+            <PropertyRef Name="TTPT_MA" />
+          </Key>
+          <Property Name="TTPT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="TTPT_TEN" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CHI_SO_NUOC" Relationship="Cty_CapNuocModel.FK_SCN_TH_PT_TT_TRANG_TH" FromRole="TRANG_THAI_PT" ToRole="CHI_SO_NUOC" />
+        </EntityType>
+        <EntityType Name="VAITRO">
+          <Key>
+            <PropertyRef Name="VT_MA" />
+          </Key>
+          <Property Name="VT_MA" Type="String" Nullable="false" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="VT_TEN" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIENs" Relationship="Cty_CapNuocModel.FK_NHANVIEN_ND_VT_VAITRO" FromRole="VAITRO" ToRole="NHANVIEN" />
+          <NavigationProperty Name="SUB_MENU" Relationship="Cty_CapNuocModel.FK_SUB_MENU_VT_SUB_VAITRO" FromRole="VAITRO" ToRole="SUB_MENU" />
+        </EntityType>
+        <Association Name="FK_CHI_SO_N_CSN_KH_KHACH_HA">
+          <End Type="Cty_CapNuocModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.CHI_SO_NUOC" Role="CHI_SO_NUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHACH_HANG">
+              <PropertyRef Name="KH_MA" />
+            </Principal>
+            <Dependent Role="CHI_SO_NUOC">
+              <PropertyRef Name="KH_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CHI_SO_N_KG_CSN_KY_GHI">
+          <End Type="Cty_CapNuocModel.KY_GHI" Role="KY_GHI" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.CHI_SO_NUOC" Role="CHI_SO_NUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KY_GHI">
+              <PropertyRef Name="KYGHI_MA" />
+            </Principal>
+            <Dependent Role="CHI_SO_NUOC">
+              <PropertyRef Name="KYGHI_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SCN_TH_PT_TT_TRANG_TH">
+          <End Type="Cty_CapNuocModel.TRANG_THAI_PT" Role="TRANG_THAI_PT" Multiplicity="0..1" />
+          <End Type="Cty_CapNuocModel.CHI_SO_NUOC" Role="CHI_SO_NUOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANG_THAI_PT">
+              <PropertyRef Name="TTPT_MA" />
+            </Principal>
+            <Dependent Role="CHI_SO_NUOC">
+              <PropertyRef Name="TTPT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_CV_NV_CHUCVU">
+          <End Type="Cty_CapNuocModel.CHUCVU" Role="CHUCVU" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.NHANVIEN" Role="NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CHUCVU">
+              <PropertyRef Name="CV_MA" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="CV_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DOI_TUON_DT_GIA_DONGIA">
+          <End Type="Cty_CapNuocModel.DONGIA" Role="DONGIA" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.DOI_TUONG" Role="DOI_TUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DONGIA">
+              <PropertyRef Name="DG_MA" />
+            </Principal>
+            <Dependent Role="DOI_TUONG">
+              <PropertyRef Name="DG_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_DT_DOI_TUON">
+          <End Type="Cty_CapNuocModel.DOI_TUONG" Role="DOI_TUONG" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOI_TUONG">
+              <PropertyRef Name="DT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="DT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_HTTT_HINHTHUC">
+          <End Type="Cty_CapNuocModel.HINHTHUC_THANHTOAN" Role="HINHTHUC_THANHTOAN" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HINHTHUC_THANHTOAN">
+              <PropertyRef Name="HTTT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="HTTT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_KV_KHU_VUC">
+          <End Type="Cty_CapNuocModel.KHU_VUC" Role="KHU_VUC" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHU_VUC">
+              <PropertyRef Name="KV_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="KV_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_KH_TT_TRANG_TH">
+          <End Type="Cty_CapNuocModel.TRANG_THAI" Role="TRANG_THAI" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TRANG_THAI">
+              <PropertyRef Name="TT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="TT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHACH_HA_LT_KH_LO_TRINH">
+          <End Type="Cty_CapNuocModel.LO_TRINH" Role="LO_TRINH" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.KHACH_HANG" Role="KHACH_HANG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LO_TRINH">
+              <PropertyRef Name="LT_MA" />
+            </Principal>
+            <Dependent Role="KHACH_HANG">
+              <PropertyRef Name="LT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_KHU_VUC_KV_PHUONG_PHUONG">
+          <End Type="Cty_CapNuocModel.PHUONG" Role="PHUONG" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.KHU_VUC" Role="KHU_VUC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHUONG">
+              <PropertyRef Name="PHUONG_MA" />
+            </Principal>
+            <Dependent Role="KHU_VUC">
+              <PropertyRef Name="PHUONG_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LO_TRINH_NV_LT_NHANVIEN">
+          <End Type="Cty_CapNuocModel.NHANVIEN" Role="NHANVIEN" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.LO_TRINH" Role="LO_TRINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="NV_USERNAME" />
+            </Principal>
+            <Dependent Role="LO_TRINH">
+              <PropertyRef Name="NV_USERNAME" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUB_MENU_MAIN_SUB_MAIN_MEN">
+          <End Type="Cty_CapNuocModel.MAIN_MENU" Role="MAIN_MENU" Multiplicity="0..1" />
+          <End Type="Cty_CapNuocModel.SUB_MENU" Role="SUB_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MAIN_MENU">
+              <PropertyRef Name="MAIN_ID" />
+            </Principal>
+            <Dependent Role="SUB_MENU">
+              <PropertyRef Name="MAIN_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_ND_VT_VAITRO">
+          <End Type="Cty_CapNuocModel.VAITRO" Role="VAITRO" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.NHANVIEN" Role="NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAITRO">
+              <PropertyRef Name="VT_MA" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="VT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_PB_NV_PHONGBAN">
+          <End Type="Cty_CapNuocModel.PHONGBAN" Role="PHONGBAN" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.NHANVIEN" Role="NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHONGBAN">
+              <PropertyRef Name="PB_MA" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="PB_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PHUONG_PHUONG_QU_QUAN">
+          <End Type="Cty_CapNuocModel.QUAN" Role="QUAN" Multiplicity="1" />
+          <End Type="Cty_CapNuocModel.PHUONG" Role="PHUONG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="QUAN">
+              <PropertyRef Name="QUAN_MA" />
+            </Principal>
+            <Dependent Role="PHUONG">
+              <PropertyRef Name="QUAN_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SUB_MENU_VT_SUB_VAITRO">
+          <End Type="Cty_CapNuocModel.VAITRO" Role="VAITRO" Multiplicity="0..1" />
+          <End Type="Cty_CapNuocModel.SUB_MENU" Role="SUB_MENU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VAITRO">
+              <PropertyRef Name="VT_MA" />
+            </Principal>
+            <Dependent Role="SUB_MENU">
+              <PropertyRef Name="VT_MA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Cty_CapNuocModelStoreContainer" CdmEntityContainer="Cty_CapNuocEntities">
+          <EntitySetMapping Name="CHI_SO_NUOC">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.CHI_SO_NUOC">
+              <MappingFragment StoreEntitySet="CHI_SO_NUOC">
+                <ScalarProperty Name="THANH_TIEN" ColumnName="THANH_TIEN" />
+                <ScalarProperty Name="TTPT_MA" ColumnName="TTPT_MA" />
+                <ScalarProperty Name="CSN_TIEUTHU2" ColumnName="CSN_TIEUTHU2" />
+                <ScalarProperty Name="CSN_TIEUTHU1" ColumnName="CSN_TIEUTHU1" />
+                <ScalarProperty Name="CSN_TIEUTHU" ColumnName="CSN_TIEUTHU" />
+                <ScalarProperty Name="CSN_CU" ColumnName="CSN_CU" />
+                <ScalarProperty Name="CSN_MOI" ColumnName="CSN_MOI" />
+                <ScalarProperty Name="CSN_MA" ColumnName="CSN_MA" />
+                <ScalarProperty Name="KYGHI_MA" ColumnName="KYGHI_MA" />
+                <ScalarProperty Name="KH_MA" ColumnName="KH_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CHUCVUs">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.CHUCVU">
+              <MappingFragment StoreEntitySet="CHUCVU">
+                <ScalarProperty Name="CV_TEN" ColumnName="CV_TEN" />
+                <ScalarProperty Name="CV_MA" ColumnName="CV_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOI_TUONG">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.DOI_TUONG">
+              <MappingFragment StoreEntitySet="DOI_TUONG">
+                <ScalarProperty Name="DT_TEN" ColumnName="DT_TEN" />
+                <ScalarProperty Name="DG_MA" ColumnName="DG_MA" />
+                <ScalarProperty Name="DT_MA" ColumnName="DT_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DONGIAs">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.DONGIA">
+              <MappingFragment StoreEntitySet="DONGIA">
+                <ScalarProperty Name="GIATIEN" ColumnName="GIATIEN" />
+                <ScalarProperty Name="DG_MA" ColumnName="DG_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HINHTHUC_THANHTOAN">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.HINHTHUC_THANHTOAN">
+              <MappingFragment StoreEntitySet="HINHTHUC_THANHTOAN">
+                <ScalarProperty Name="HTTT_TEN" ColumnName="HTTT_TEN" />
+                <ScalarProperty Name="HTTT_MA" ColumnName="HTTT_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHACH_HANG">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.KHACH_HANG">
+              <MappingFragment StoreEntitySet="KHACH_HANG">
+                <ScalarProperty Name="KH_TENNGANHANG" ColumnName="KH_TENNGANHANG" />
+                <ScalarProperty Name="KH_SOTK" ColumnName="KH_SOTK" />
+                <ScalarProperty Name="KH_SDT" ColumnName="KH_SDT" />
+                <ScalarProperty Name="KH_DIACHITHANHTOAN" ColumnName="KH_DIACHITHANHTOAN" />
+                <ScalarProperty Name="KH_DIACHILAPDAT" ColumnName="KH_DIACHILAPDAT" />
+                <ScalarProperty Name="KH_HOTEN" ColumnName="KH_HOTEN" />
+                <ScalarProperty Name="KV_MA" ColumnName="KV_MA" />
+                <ScalarProperty Name="DT_MA" ColumnName="DT_MA" />
+                <ScalarProperty Name="TT_MA" ColumnName="TT_MA" />
+                <ScalarProperty Name="HTTT_MA" ColumnName="HTTT_MA" />
+                <ScalarProperty Name="LT_MA" ColumnName="LT_MA" />
+                <ScalarProperty Name="KH_MA" ColumnName="KH_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHU_VUC">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.KHU_VUC">
+              <MappingFragment StoreEntitySet="KHU_VUC">
+                <ScalarProperty Name="KV_TEN" ColumnName="KV_TEN" />
+                <ScalarProperty Name="PHUONG_MA" ColumnName="PHUONG_MA" />
+                <ScalarProperty Name="KV_MA" ColumnName="KV_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KY_GHI">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.KY_GHI">
+              <MappingFragment StoreEntitySet="KY_GHI">
+                <ScalarProperty Name="KYGHI_TEN" ColumnName="KYGHI_TEN" />
+                <ScalarProperty Name="KYGHI_MA" ColumnName="KYGHI_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LO_TRINH">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.LO_TRINH">
+              <MappingFragment StoreEntitySet="LO_TRINH">
+                <ScalarProperty Name="LT_TEN" ColumnName="LT_TEN" />
+                <ScalarProperty Name="NV_USERNAME" ColumnName="NV_USERNAME" />
+                <ScalarProperty Name="LT_MA" ColumnName="LT_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAIN_MENU">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.MAIN_MENU">
+              <MappingFragment StoreEntitySet="MAIN_MENU">
+                <ScalarProperty Name="MAIN_ICON" ColumnName="MAIN_ICON" />
+                <ScalarProperty Name="MAIN_NAME" ColumnName="MAIN_NAME" />
+                <ScalarProperty Name="MAIN_ID" ColumnName="MAIN_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHANVIENs">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.NHANVIEN">
+              <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="NV_AVATAR" ColumnName="NV_AVATAR" />
+                <ScalarProperty Name="NV_EMAIL" ColumnName="NV_EMAIL" />
+                <ScalarProperty Name="NV_SDT" ColumnName="NV_SDT" />
+                <ScalarProperty Name="NV_HOTEN" ColumnName="NV_HOTEN" />
+                <ScalarProperty Name="NV_PASSWORD" ColumnName="NV_PASSWORD" />
+                <ScalarProperty Name="PB_MA" ColumnName="PB_MA" />
+                <ScalarProperty Name="CV_MA" ColumnName="CV_MA" />
+                <ScalarProperty Name="VT_MA" ColumnName="VT_MA" />
+                <ScalarProperty Name="NV_USERNAME" ColumnName="NV_USERNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHONGBANs">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.PHONGBAN">
+              <MappingFragment StoreEntitySet="PHONGBAN">
+                <ScalarProperty Name="PB_TEN" ColumnName="PB_TEN" />
+                <ScalarProperty Name="PB_MA" ColumnName="PB_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHUONGs">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.PHUONG">
+              <MappingFragment StoreEntitySet="PHUONG">
+                <ScalarProperty Name="PHUONG_TEN" ColumnName="PHUONG_TEN" />
+                <ScalarProperty Name="QUAN_MA" ColumnName="QUAN_MA" />
+                <ScalarProperty Name="PHUONG_MA" ColumnName="PHUONG_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUANs">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.QUAN">
+              <MappingFragment StoreEntitySet="QUAN">
+                <ScalarProperty Name="QUAN_TEN" ColumnName="QUAN_TEN" />
+                <ScalarProperty Name="QUAN_MA" ColumnName="QUAN_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUB_MENU">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.SUB_MENU">
+              <MappingFragment StoreEntitySet="SUB_MENU">
+                <ScalarProperty Name="SUB_ACTION" ColumnName="SUB_ACTION" />
+                <ScalarProperty Name="SUB_CONTROLLER" ColumnName="SUB_CONTROLLER" />
+                <ScalarProperty Name="SUB_NAME" ColumnName="SUB_NAME" />
+                <ScalarProperty Name="MAIN_ID" ColumnName="MAIN_ID" />
+                <ScalarProperty Name="VT_MA" ColumnName="VT_MA" />
+                <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANG_THAI">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.TRANG_THAI">
+              <MappingFragment StoreEntitySet="TRANG_THAI">
+                <ScalarProperty Name="TT_TEN" ColumnName="TT_TEN" />
+                <ScalarProperty Name="TT_MA" ColumnName="TT_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANG_THAI_PT">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.TRANG_THAI_PT">
+              <MappingFragment StoreEntitySet="TRANG_THAI_PT">
+                <ScalarProperty Name="TTPT_TEN" ColumnName="TTPT_TEN" />
+                <ScalarProperty Name="TTPT_MA" ColumnName="TTPT_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VAITROes">
+            <EntityTypeMapping TypeName="Cty_CapNuocModel.VAITRO">
+              <MappingFragment StoreEntitySet="VAITRO">
+                <ScalarProperty Name="VT_TEN" ColumnName="VT_TEN" />
+                <ScalarProperty Name="VT_MA" ColumnName="VT_MA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
